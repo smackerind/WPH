@@ -3,6 +3,7 @@
   --base-black: #000000;
   --base-pure-white: #ffffff;
   --neutral-25: #fdfdfd;
+  --neutral-500: #717680;
   --primary-100: #421abc;
   --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
   --border-subtle: rgba(253, 253, 253, 0.12);
@@ -15,8 +16,14 @@
   --font-family-body: "Inter", sans-serif;
 
   /* Font size / line-height  */
+  --display-3xl-size: 56px;
+  --display-3xl-line: 68px;
+  --display-xl-size: 40px;
+  --display-xl-line: 48px;
   --display-xs-size: 24px;
   --display-xs-line: 32px;
+  --text-xl-size: 20px;
+  --text-xl-line: 34px;
   --text-sm-size: 14px;
   --text-sm-line: 20px;
   --text-md-size: 16px;
@@ -39,6 +46,17 @@
   --header-h-desktop: 84px;
   --header-px-mobile: 16px;  /* spacing-xl  */
   --header-px-desktop: 140px;
+
+  /* Gradient background hero */
+  --hero-gradient: linear-gradient(
+    180deg,
+    #000000 17.55%,
+    rgba(33, 10, 94, 0.3) 136.21%
+  );
+  --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
+  --border-subtle: rgba(253, 253, 253, 0.12);
+  --item-hover: rgba(253, 253, 253, 0.08);
+
 }
 
 /* ---------- Reset ---------- */
@@ -250,7 +268,7 @@ ul {
   /* Hamburger & overlay tidak dipakai di desktop */
   .hamburger,
   .mobile-menu {
-     display: none;/*!important; */
+     display: none;
   }
 
   /* Nav utama */
@@ -292,5 +310,132 @@ ul {
     font-size: var(--text-md-size);
     line-height: var(--text-md-line);
     letter-spacing: -0.03em;        /* -3% */
+  }
+}
+
+/* ============================================================
+   HERO SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   Teks di atas, gambar tangan di bawah (stack vertikal)
+   ============================================================ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px 20px;
+  background: var(--hero-gradient);
+  overflow: hidden;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);          /* 24px */
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);           /* 16px */
+}
+
+/* Title-1 — display-xl / Bold */
+.hero__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-xl-size);
+  line-height: var(--display-xl-line);
+  letter-spacing: -0.03em;          /* -3% */
+  color: var(--neutral-25);
+}
+
+/* Kata "Future." — italic */
+.hero__title em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Title-2 — text-md / Regular */
+.hero__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;          /* -3% */
+  color: var(--neutral-500);
+}
+
+/* Tombol "Let's Talk" — full width di mobile */
+.btn--hero {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-md);       /* 8px */
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+}
+
+/* Gambar tangan memegang HP */
+.hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  max-width: 308.85px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- HERO (desktop) ---------- */
+@media (min-width: 1025px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 750px;
+    padding: 0 var(--header-px-desktop);   /* 140px kiri-kanan */
+  }
+
+  .hero__content {
+    flex: none;
+    width: 687px;
+    gap: 48px;
+  }
+
+  .hero__text { gap: var(--spacing-xl); }  /* 16px */
+
+  .hero__title {
+    font-size: var(--display-3xl-size);
+    line-height: var(--display-3xl-line);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: 0;                     /* desktop: 0% */
+  }
+
+  /* Tombol "Let's Talk" — lebar tetap 300px */
+  .btn--hero {
+    width: 300px;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;               /* -3% */
+  }
+
+  .btn--hero .btn__label { padding-left: var(--spacing-md); }
+
+  /* Gambar tangan — lebih besar & keluar sedikit dari batas bawah */
+  .hero__media {
+    flex: none;
+    align-self: flex-end;
+  }
+
+  .hero__image {
+    max-width: 590.64px;
+    margin-bottom: -1px;
   }
 }
