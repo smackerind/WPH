@@ -8,26 +8,30 @@
   --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
   --border-subtle: rgba(253, 253, 253, 0.12);
   --item-hover: rgba(253, 253, 253, 0.08);
-
-  /* Typography — font families
-     NOTE: pada --font-family-display tidak diketahui nama font asli 
-     dari Figma sehinga memakai font tsb. */
+  --neutral-900: rgba(253, 253, 253, 0.12);
+  --hero-gradient: linear-gradient(180deg,#000000 17.55%,rgba(33, 10, 94, 0.3) 136.21%  );
+   
   --font-family-display: "Space Grotesk", "Inter", sans-serif;
   --font-family-body: "Inter", sans-serif;
+  --neutral-900:#1a1a1a;
 
   /* Font size / line-height  */
-  --display-3xl-size: 56px;
-  --display-3xl-line: 68px;
-  --display-xl-size: 40px;
-  --display-xl-line: 48px;
-  --display-xs-size: 24px;
-  --display-xs-line: 32px;
-  --text-xl-size: 20px;
-  --text-xl-line: 34px;
-  --text-sm-size: 14px;
-  --text-sm-line: 20px;
-  --text-md-size: 16px;
-  --text-md-line: 24px;
+  --display-3xl-size: 56px;   --display-3xl-line: 68px;
+  --display-2xl-size: 48px;   --display-2xl-line: 60px;
+  --display-xl-size:  40px;   --display-xl-line:  56px;
+  --display-lg-size:  36px;   --display-lg-line:  44px;
+  --display-md-size:  32px;   --display-md-line:  42px;
+  --display-sm-size:  28px;   --display-sm-line:  38px;
+  --display-xs-size:  24px;   --display-xs-line:  36px;
+
+  --text-xl-size: 20px;   --text-xl-line: 34px;
+  --text-lg-size: 18px;   --text-lg-line: 32px;
+  --text-md-size: 16px;   --text-md-line: 30px;
+  --text-sm-size: 14px;   --text-sm-line: 28px;
+
+  --text-lg-semibold-line: 28px;
+  --hero-title-mobile-line: 48px;
+  --nav-item-line: 20px;
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -37,6 +41,7 @@
   --spacing-xl: 16px;
   --spacing-2xl: 20px;
   --spacing-3xl: 24px;
+  --spacing-4xl: 32px;
 
   /* Radius */
   --radius-full: 9999px;
@@ -44,18 +49,8 @@
   /* Header sizing */
   --header-h-mobile: 64px;
   --header-h-desktop: 84px;
-  --header-px-mobile: 16px;  /* spacing-xl  */
+  --header-px-mobile: 16px;
   --header-px-desktop: 140px;
-
-  /* Gradient background hero */
-  --hero-gradient: linear-gradient(
-    180deg,
-    #000000 17.55%,
-    rgba(33, 10, 94, 0.3) 136.21%
-  );
-  --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
-  --border-subtle: rgba(253, 253, 253, 0.12);
-  --item-hover: rgba(253, 253, 253, 0.08);
 
 }
 
@@ -83,10 +78,9 @@ ul {
   list-style: none;
 }
 
-/* =====================================
-   BASE = MOBILE (< 768px)
-   Logo kiri + tombol hamburger kanan
-   ====================================== */
+/* ==========================================================
+   BASE = MOBILE (< 768px) Logo kiri + tombol hamburger kanan
+   ========================================================== */
 .header {
   position: sticky;
   top: 0;
@@ -101,7 +95,7 @@ ul {
   background: var(--base-black);
 }
 
-/* Logo "Tech." — display-xs / Bold */
+/* Logo "Tech." — display-xs */
 .logo {
   font-family: var(--font-family-display);
   font-weight: 700;
@@ -139,7 +133,7 @@ ul {
 .nav-toggle { display: none; }
 
 .mobile-menu {
-  display: none; /* tersembunyi secara default */
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -181,18 +175,18 @@ ul {
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);           /* 12px */
-  padding: var(--spacing-xl);       /* 16px, mulai dari top 80px area */
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
   padding-top: var(--spacing-xl);
 }
 
 .mobile-menu__item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);           /* 6px */
+  gap: var(--spacing-sm);
   width: 100%;
   height: 36px;
-  padding: var(--spacing-md) 0;     /* 8px atas-bawah */
+  padding: var(--spacing-md) 0;
   border-radius: var(--radius-full);
   font-family: var(--font-family-body);
   font-weight: 400;
@@ -206,7 +200,7 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs);           /* 4px */
+  gap: var(--spacing-xs);
   border-radius: var(--radius-full);
   background: var(--primary-100);
   color: var(--base-pure-white);
@@ -227,7 +221,7 @@ ul {
 .btn--block {
   width: 100%;
   height: 48px;
-  padding: var(--spacing-md);       /* 8px */
+  padding: var(--spacing-md);
   margin-top: var(--spacing-md);
   font-size: var(--text-sm-size);
   line-height: var(--text-sm-line);
@@ -277,15 +271,15 @@ ul {
   .nav__list {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);         /* 12px */
+    gap: var(--spacing-lg);
   }
 
   .nav__item {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);         /* 6px */
+    gap: var(--spacing-sm);
     height: 36px;
-    padding: var(--spacing-md) var(--spacing-xl); /* 8px 16px */
+    padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--radius-full);
     font-family: var(--font-family-body);
     font-weight: 400;
@@ -306,16 +300,16 @@ ul {
   .btn.btn--desktop {
     display: inline-flex;
     height: 44px;
-    padding: var(--spacing-md);     /* 8px */
+    padding: var(--spacing-md);
     font-size: var(--text-md-size);
     line-height: var(--text-md-line);
-    letter-spacing: -0.03em;        /* -3% */
+    letter-spacing: -0.03em;
   }
 }
 
 /* ============================================================
    HERO SECTION — BASE = MOBILE & TABLET (≤ 1024px)
-   Teks di atas, gambar tangan di bawah (stack vertikal)
+   Teks di atas, gambar tangan di bawah
    ============================================================ */
 .hero {
   display: flex;
@@ -329,26 +323,26 @@ ul {
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3xl);          /* 24px */
+  gap: var(--spacing-3xl);
 }
 
 .hero__text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);           /* 16px */
+  gap: var(--spacing-xl);
 }
 
-/* Title-1 — display-xl / Bold */
+/* Title-1 — display-xl  */
 .hero__title {
   font-family: var(--font-family-display);
   font-weight: 700;
   font-size: var(--display-xl-size);
   line-height: var(--display-xl-line);
-  letter-spacing: -0.03em;          /* -3% */
+  letter-spacing: -0.03em;
   color: var(--neutral-25);
 }
 
-/* Kata "Future." — italic */
+/* Kata "Future.   */
 .hero__title em {
   font-style: italic;
   font-weight: 700;
@@ -360,7 +354,7 @@ ul {
   font-weight: 400;
   font-size: var(--text-md-size);
   line-height: var(--text-md-line);
-  letter-spacing: -0.03em;          /* -3% */
+  letter-spacing: -0.03em;
   color: var(--neutral-500);
 }
 
@@ -368,7 +362,7 @@ ul {
 .btn--hero {
   width: 100%;
   height: 48px;
-  padding: var(--spacing-md);       /* 8px */
+  padding: var(--spacing-md);
   font-size: var(--text-sm-size);
   line-height: var(--text-sm-line);
   letter-spacing: 0;
@@ -396,7 +390,7 @@ ul {
     justify-content: space-between;
     gap: 18px;
     min-height: 750px;
-    padding: 0 var(--header-px-desktop);   /* 140px kiri-kanan */
+    padding: 0 var(--header-px-desktop);
   }
 
   .hero__content {
@@ -405,7 +399,7 @@ ul {
     gap: 48px;
   }
 
-  .hero__text { gap: var(--spacing-xl); }  /* 16px */
+  .hero__text { gap: var(--spacing-xl); }
 
   .hero__title {
     font-size: var(--display-3xl-size);
@@ -415,20 +409,20 @@ ul {
   .hero__subtitle {
     font-size: var(--text-xl-size);
     line-height: var(--text-xl-line);
-    letter-spacing: 0;                     /* desktop: 0% */
+    letter-spacing: 0;
   }
 
-  /* Tombol "Let's Talk" — lebar tetap 300px */
+  /* Tombol "Let's Talk" */
   .btn--hero {
     width: 300px;
     font-size: var(--text-md-size);
     line-height: var(--text-md-line);
-    letter-spacing: -0.03em;               /* -3% */
+    letter-spacing: -0.03em;
   }
 
   .btn--hero .btn__label { padding-left: var(--spacing-md); }
 
-  /* Gambar tangan — lebih besar & keluar sedikit dari batas bawah */
+  /* Gambar tangan */
   .hero__media {
     flex: none;
     align-self: flex-end;
@@ -437,5 +431,222 @@ ul {
   .hero__image {
     max-width: 590.64px;
     margin-bottom: -1px;
+  }
+}
+
+/* ============================================================
+   WHO WE ARE SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+.who {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+  text-align: center;
+}
+
+.who__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+.who__desc {
+  max-width: 354px;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-semibold-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+.who__desc strong {
+  font-weight: 600;
+  color: var(--neutral-25);
+}
+
+/* ---------- WHO WE ARE (desktop) ---------- */
+@media (min-width: 1025px) {
+  .who {
+    gap: var(--spacing-4xl);
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .who__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  .who__desc {
+    max-width: 1160px;
+    font-family: var(--font-family-display);
+    font-size: var(--display-md-size);
+    line-height: var(--display-md-line);
+    letter-spacing: -0.02em;
+  }
+}
+
+
+/* ============================================================
+   WHAT WE DO SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 16px;
+  background: var(--base-black);
+  text-align: center;
+}
+
+/* --- Judul section --- */
+.services__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 348px;
+}
+
+/* Title-1 — display-sm */
+.services__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-sm */
+.services__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size); 
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* --- Grid kartu: 2 kolom di mobile --- */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl); 
+  width: 100%;
+  max-width: 348px;
+}
+
+/* --- Kartu --- */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--neutral-900);
+  border-radius: 12px;
+  background: var(--base-black);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--primary-100);
+  transform: translateY(-2px);
+}
+
+/* Ikon 48×48 */
+.card__icon {
+  flex: none;
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Kontainer deskripsi */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Judul kartu — text-lg */
+.card__title {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Deskripsi kartu — text-sm */
+.card__desc {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .services {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .services__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl / Bold */
+  .services__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .services__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Grid: 3 kolom, gap 20px*/
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+    max-width: 1160px;
+  }
+
+  .card {
+    padding: var(--spacing-3xl);
+  }
+
+  /* Judul kartu — text-xl */
+  .card__title {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Deskripsi kartu — text-md  */
+  .card__desc {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
   }
 }
