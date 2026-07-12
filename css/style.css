@@ -1,1 +1,296 @@
-/* code-here */
+:root {
+  /* Colors */
+  --base-black: #000000;
+  --base-pure-white: #ffffff;
+  --neutral-25: #fdfdfd;
+  --primary-100: #421abc;
+  --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
+  --border-subtle: rgba(253, 253, 253, 0.12);
+  --item-hover: rgba(253, 253, 253, 0.08);
+
+  /* Typography — font families
+     NOTE: pada --font-family-display tidak diketahui nama font asli 
+     dari Figma sehinga memakai font tsb. */
+  --font-family-display: "Space Grotesk", "Inter", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+
+  /* Font size / line-height  */
+  --display-xs-size: 24px;
+  --display-xs-line: 32px;
+  --text-sm-size: 14px;
+  --text-sm-line: 20px;
+  --text-md-size: 16px;
+  --text-md-line: 24px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+  --spacing-2xl: 20px;
+  --spacing-3xl: 24px;
+
+  /* Radius */
+  --radius-full: 9999px;
+
+  /* Header sizing */
+  --header-h-mobile: 64px;
+  --header-h-desktop: 84px;
+  --header-px-mobile: 16px;  /* spacing-xl  */
+  --header-px-desktop: 140px;
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--base-black);
+  color: var(--neutral-25);
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =====================================
+   BASE = MOBILE (< 768px)
+   Logo kiri + tombol hamburger kanan
+   ====================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--header-h-mobile);
+  padding: 0 var(--header-px-mobile);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--base-black);
+}
+
+/* Logo "Tech." — display-xs / Bold */
+.logo {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-xs-size);
+  line-height: var(--display-xs-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Desktop nav & desktop CTA disembunyikan di mobile/tablet */
+.nav,
+.btn.btn--desktop {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-25);
+  cursor: pointer;
+}
+
+.hamburger:focus-visible,
+.x-close:focus-visible {
+  outline: 2px solid var(--primary-100);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- Overlay menu (state saat hamburger di-checklist) ---------- */
+.nav-toggle { display: none; }
+
+.mobile-menu {
+  display: none; /* tersembunyi secara default */
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--base-black);
+}
+
+/* CSS-only toggle: buka overlay ketika checkbox tercentang */
+.nav-toggle:checked ~ .mobile-menu {
+  display: flex;
+}
+
+/* Header di dalam overlay: logo + tombol X */
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h-mobile);
+  padding: 0 var(--header-px-mobile);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.x-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-25);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+/* Daftar menu vertikal */
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);           /* 12px */
+  padding: var(--spacing-xl);       /* 16px, mulai dari top 80px area */
+  padding-top: var(--spacing-xl);
+}
+
+.mobile-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);           /* 6px */
+  width: 100%;
+  height: 36px;
+  padding: var(--spacing-md) 0;     /* 8px atas-bawah */
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  color: var(--neutral-25);
+}
+
+/* ---------- Tombol Contact Us ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);           /* 4px */
+  border-radius: var(--radius-full);
+  background: var(--primary-100);
+  color: var(--base-pure-white);
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.btn:hover { filter: brightness(1.12); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--base-pure-white);
+  outline-offset: 2px;
+}
+
+/* Contact Us versi overlay: full width, tinggi 48px */
+.btn--block {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-md);       /* 8px */
+  margin-top: var(--spacing-md);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+}
+
+/* Ikon chevron & lainnya mengikuti warna teks */
+.icon {
+  flex: none;
+  display: block;
+}
+
+/* ============================================================
+   TABLET (768–1024px)  →  tetap tampilan hamburger (sama mobile)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    height: var(--header-h-mobile);
+    padding: 0 var(--header-px-mobile);
+  }
+  /* nav & CTA desktop tetap disembunyikan; hamburger tetap tampil */
+  .nav,
+  .btn.btn--desktop { display: none; }
+   .hamburger { display: inline-flex; }
+}
+
+/* ============================================================
+   DESKTOP (> 1024px)  →  nav lengkap + tombol Contact Us
+   ============================================================ */
+@media (min-width: 1025px) {
+  .header {
+    height: var(--header-h-desktop);
+    padding: 0 var(--header-px-desktop);
+    background: var(--header-bg-desktop);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+  }
+
+  /* Hamburger & overlay tidak dipakai di desktop */
+  .hamburger,
+  .mobile-menu {
+     display: none;/*!important; */
+  }
+
+  /* Nav utama */
+  .nav { display: block; }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);         /* 12px */
+  }
+
+  .nav__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);         /* 6px */
+    height: 36px;
+    padding: var(--spacing-md) var(--spacing-xl); /* 8px 16px */
+    border-radius: var(--radius-full);
+    font-family: var(--font-family-body);
+    font-weight: 400;
+    font-size: var(--text-sm-size);
+    line-height: var(--text-sm-line);
+    color: var(--neutral-25);
+    transition: background 0.15s ease;
+  }
+
+  .nav__item:hover { background: var(--item-hover); }
+
+  .nav__item:focus-visible {
+    outline: 2px solid var(--neutral-25);
+    outline-offset: 2px;
+  }
+
+  /* Tombol Contact Us desktop */
+  .btn.btn--desktop {
+    display: inline-flex;
+    height: 44px;
+    padding: var(--spacing-md);     /* 8px */
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;        /* -3% */
+  }
+}

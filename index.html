@@ -1,14 +1,64 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Challenge - 2</title>
-  </head>
-  <body>
-    <!-- code here -->
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment02</title>
+    <link rel="stylesheet" href="../Assignment02/css/style.css" />
+</head>
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header class="header">
+
+    <!-- Logo -->
+    <a href="#" class="logo">Tech.</a>
+
+    <!-- Navigasi (tampil di desktop > 1024px) -->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#" class="nav__item">About</a></li>
+        <li><a href="#" class="nav__item">Service</a></li>                
+        <li><a href="#" class="nav__item">Our Work</a></li>
+        <li><a href="#" class="nav__item">Team</a></li>
+      </ul>
+    </nav>
+
+    <!-- Tombol Contact Us (desktop) -->
+    <a href="#" class="btn btn--desktop">
+       <span class="btn__label">Contact Us</span>
+    </a>
+
+    <!-- checkbox  -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    
+    <!-- Tombol hamburger (tampil di mobile & tablet <= 1024px) -->
+    <label for="nav-toggle" class="hamburger">
+      <img src="assets/images/Icon-Humberger.svg" class="icon" alt="TombolHumberger">
+    </label>
+
+    <!-- ============ OVERLAY MENU (mobile) ============ -->
+    <div class="mobile-menu" role="dialog">
+      <div class="mobile-menu__header">
+        <span class="logo">Tech.</span>
+        <label for="nav-toggle" class="x-close">
+          <img src="assets/images/Icon-X.svg" class="icon" alt="Tombol-X">
+        </label>
+      </div>
+
+      <nav class="mobile-menu__nav">
+        <a href="#" class="mobile-menu__item">About</a>
+        <a href="#" class="mobile-menu__item">Service</a>
+        <a href="#" class="mobile-menu__item">Our Work</a>
+        <a href="#" class="mobile-menu__item">Team</a>
+        <a href="#" class="btn btn--block"><span class="btn__label">Contact Us</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+<body>
+
+
+
+
+</body>
 </html>
+
