@@ -8,13 +8,11 @@
   --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
   --border-subtle: rgba(253, 253, 253, 0.12);
   --item-hover: rgba(253, 253, 253, 0.08);
-  --neutral-900: rgba(253, 253, 253, 0.12);
   --hero-gradient: linear-gradient(180deg,#000000 17.55%,rgba(33, 10, 94, 0.3) 136.21%  );
    
   --font-family-display: "Space Grotesk", "Inter", sans-serif;
   --font-family-body: "Inter", sans-serif;
-  --neutral-900:#1a1a1a;
-
+ 
   /* Font size / line-height  */
   --display-3xl-size: 56px;   --display-3xl-line: 68px;
   --display-2xl-size: 48px;   --display-2xl-line: 60px;
@@ -244,7 +242,7 @@ ul {
   /* nav & CTA desktop tetap disembunyikan; hamburger tetap tampil */
   .nav,
   .btn.btn--desktop { display: none; }
-   .hamburger { display: inline-flex; }
+  .hamburger { display: inline-flex; }
 }
 
 /* ============================================================
@@ -552,7 +550,6 @@ ul {
   align-items: center;
   gap: var(--spacing-2xl);
   padding: var(--spacing-xl);
-  border: 1px solid var(--neutral-900);
   border-radius: 12px;
   background: var(--base-black);
   transition: border-color 0.2s ease, transform 0.2s ease;
@@ -647,6 +644,128 @@ ul {
   .card__desc {
     font-size: var(--text-md-size);
     line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   OUR WORK SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.work__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm */
+.work__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md  */
+.work__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-500);
+}
+
+/* --- Grid portfolio: 1 kolom di mobile --- */
+.work__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  width: 100%;
+  max-width: 361px;
+}
+
+/* --- Kartu portfolio --- */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* Gambar — persegi */
+.portfolio__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+ }
+
+/* Caption — text-md */
+.portfolio__caption {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .work {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .work__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .work__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .work__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Grid: 3 kolom, gap 20px */
+  .work__grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1159px;
+  }
+
+  .portfolio {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Caption — text-xl */
+  .portfolio__caption {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
     letter-spacing: -0.03em;
   }
 }
