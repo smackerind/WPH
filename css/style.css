@@ -769,3 +769,161 @@ ul {
     letter-spacing: -0.03em;
   }
 }
+
+/* ============================================================
+   MEET THE TEAM SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.team__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm */
+.team__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md */
+.team__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size); 
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em; 
+  color: var(--neutral-500);
+}
+
+/* --- Grid anggota: 2 kolom di mobile --- */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--spacing-2xl);
+  row-gap: var(--spacing-3xl);
+  width: 100%;
+  max-width: 340px;
+}
+
+/* --- Kartu anggota --- */
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Foto bulat  */
+.member__photo {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--neutral-900);
+}
+
+.member__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Nama — text-md  */
+.member__name {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Jabatan — text-sm */
+.member__role {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .team {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .team__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .team__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg  */
+  .team__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Grid: 4 kolom sejajar, gap 56px */
+  .team__grid {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 56px;
+    row-gap: 56px;
+    max-width: 1160px;
+  }
+
+  .member {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Foto 220px */
+  .member__photo {
+    max-width: 220px;
+  }
+
+  /* Nama — text-xl  */
+  .member__name {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Jabatan — text-md  */
+  .member__role {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
