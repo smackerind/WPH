@@ -8,6 +8,8 @@
   --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
   --border-subtle: rgba(253, 253, 253, 0.12);
   --item-hover: rgba(253, 253, 253, 0.08);
+  --neutral-800: rgba(253, 253, 253, 0.2);
+  --neutral-900: rgba(253, 253, 253, 0.12);
   --hero-gradient: linear-gradient(180deg,#000000 17.55%,rgba(33, 10, 94, 0.3) 136.21%  );
    
   --font-family-display: "Space Grotesk", "Inter", sans-serif;
@@ -77,7 +79,7 @@ ul {
 }
 
 /* ==========================================================
-   BASE = MOBILE (< 768px) Logo kiri + tombol hamburger kanan
+   BASE = MOBILE & TABLET (≤ 1024px) Logo kiri + tombol hamburger kanan
    ========================================================== */
 .header {
   position: sticky;
@@ -232,20 +234,6 @@ ul {
 }
 
 /* ============================================================
-   TABLET (768–1024px)  →  tetap tampilan hamburger (sama mobile)
-   ============================================================ */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .header {
-    height: var(--header-h-mobile);
-    padding: 0 var(--header-px-mobile);
-  }
-  /* nav & CTA desktop tetap disembunyikan; hamburger tetap tampil */
-  .nav,
-  .btn.btn--desktop { display: none; }
-  .hamburger { display: inline-flex; }
-}
-
-/* ============================================================
    DESKTOP (> 1024px)  →  nav lengkap + tombol Contact Us
    ============================================================ */
 @media (min-width: 1025px) {
@@ -313,7 +301,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 40px 20px;
+  padding: 40px 20px 0;
   background: var(--hero-gradient);
   overflow: hidden;
 }
@@ -927,3 +915,225 @@ ul {
   }
 }
 
+/* ============================================================
+   Let's Collaborate SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+
+.collab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.collab__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm  */
+.collab__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md */
+.collab__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-500);
+}
+
+/* --- Form --- */
+.collab__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
+  width: 100%;
+  max-width: 353px;
+}
+
+.collab__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Satu grup: label + input */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Label — text-sm  */
+.field__label {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Input & textarea — text-md */
+.field__input,
+.field__textarea {
+  width: 100%;
+  padding: 8px var(--spacing-xl); 
+  border: 2px solid var(--neutral-800);
+  border-radius: var(--radius-xl);
+  background: var(--base-black);
+  color: var(--neutral-25);
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em; 
+  transition: border-color 0.15s ease;
+}
+
+.field__input { height: 48px; }
+
+.field__textarea {
+  min-height: 134px;
+  resize: vertical;
+}
+
+/* Placeholder — Neutral-500 */
+.field__input::placeholder,
+.field__textarea::placeholder {
+  color: var(--neutral-500);
+  opacity: 1;
+}
+
+.field__input:focus,
+.field__textarea:focus {
+  outline: none;
+  border-color: var(--primary-100);
+}
+
+/* --- Tombol Send --- */
+.collab__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+  height: 44px;
+  padding: var(--spacing-md);               
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--primary-100);
+  color: var(--base-pure-white);
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.collab__submit:hover { filter: brightness(1.12); }
+
+.collab__submit:focus-visible {
+  outline: 2px solid var(--base-pure-white);
+  outline-offset: 2px;
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .collab {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop) 120px;  /* atas 80 / bawah 120 */
+  }
+
+  .collab__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .collab__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .collab__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Form lebar 592px, gap 40px */
+  .collab__form {
+    max-width: 592px;
+    gap: 40px;
+  }
+
+  .collab__fields {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Tombol Send — tinggi 48px, text-md */
+  .collab__submit {
+    height: 48px;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   FOOTER SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);               /* 8px */
+  padding: 24px 8px;
+  border-top: 1px solid var(--neutral-900);
+  background: var(--base-black);
+}
+
+/* Teks copyright — text-xs / Regur */
+.footer__text {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-line);
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  /* Teks copyright — text-md  */
+  .footer__text {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
