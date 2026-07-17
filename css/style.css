@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   /* Colors */
   --base-black: #000000;
   --base-pure-white: #ffffff;
@@ -236,7 +236,7 @@ ul {
 /* ============================================================
    DESKTOP (> 1024px)  →  nav lengkap + tombol Contact Us
    ============================================================ */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .header {
     height: var(--header-h-desktop);
     padding: 0 var(--header-px-desktop);
@@ -415,7 +415,7 @@ ul {
   }
 
   .hero__image {
-    max-width: 590.64px;
+    max-width: 490.64px;
     margin-bottom: -1px;
   }
 }
