@@ -1,0 +1,13 @@
+{
+  "name": "wph-assignment-3",
+  "version": "1.0.0",
+  "description": "Assignment 3 — Landing Page with Tailwind CSS",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}

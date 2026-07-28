@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-3</title>
+    <link href="../src/output.css" rel="stylesheet" />
+    <link href="../src/input.css" rel="stylesheet" />
+  </head>
+
+    <body class="bg-white font-body text-neutral-25 has-[#nav-toggle:checked]:overflow-hidden lg:overflow-x-hidden dark:bg-neutral-25 dark:text-white">
+
+      <input type="checkbox" id="nav-toggle" class="peer sr-only" a-label="Toggle menu" />
+
+      <header class="flex h-16 items-center justify-between px-4 lg:h-[84px] lg:justify-center lg:gap-8 lg:px-8 lg:backdrop-blur-[40px] xl:justify-between xl:gap-0 xl:px-[140px]">
+        <a href="#" class="flex items-center gap-[8.53px] lg:gap-[9.6px]">
+          <img src="../assets/images/logo-symbol.svg" alt="Logo" class="h-[28.85px] w-[26.3px] shrink-0 lg:h-[32.46px] lg:w-[29.59px]" />
+          <span class="text-[21.33px] leading-8 font-semibold text-black lg:text-2xl lg:leading-none dark:text-white">Your Logo</span>
+        </a>
+
+        <!--  Menu desktop (>=1024px),terpisah dari menu mobile di bawah -->
+        <nav class="hidden items-center gap-3 lg:flex">
+          <a href="#about" class="flex h-9 items-center justify-center rounded-full px-4 py-2 text-body-md font-semibold text-neutral-25 dark:text-white">About</a>
+          <a href="#services" class="flex h-9 items-center justify-center rounded-full px-4 py-2 text-body-md font-semibold text-neutral-25 dark:text-white">Service</a>
+          <a href="#portfolio" class="flex h-9 items-center justify-center rounded-full px-4 py-2 text-body-md font-semibold text-neutral-25 dark:text-white">Projects</a>
+          <a href="#testimonials" class="flex h-9 items-center justify-center rounded-full px-4 py-2 text-body-md font-semibold text-neutral-25 dark:text-white">Testimonials</a>
+          <a href="#faq" class="flex h-9 items-center justify-center rounded-full px-4 py-2 text-body-md font-semibold text-neutral-25 dark:text-white">FAQ</a>
+        </nav>
+        <a href="#contact"
+           class="hidden h-11 w-[197px] items-center justify-center gap-1 rounded-full bg-primary-200 p-2 text-body-md font-bold tracking-[-0.02em] text-white shadow-[inset_4px_4px_4px_0_#FFFFFF40] lg:flex">
+          Let&rsquo;s Talk
+        </a>
+
+        <label for="nav-toggle" class="flex h-6 w-6 cursor-pointer items-center justify-center lg:hidden">
+            <img src="../assets/images/icon-hamburger.svg" alt="Menu" class="h-6 w-6 dark:invert" />
+       </label>
+      </header>
+
+    <div class="fixed inset-0 z-50 hidden flex-col bg-white peer-checked:flex dark:bg-neutral-25">
+      <div class="flex h-16 items-center justify-between border-b border-line px-4">
+        <div class="flex items-center gap-[8.53px]">
+          <img src="../assets/images/logo-symbol.svg" alt="Logo" class="h-[28.85px] w-[26.3px] shrink-0" />
+          <span class="text-[21.33px] leading-8 font-semibold text-black dark:text-white">Your Logo</span>
+        </div>
+
+
+        <label for="nav-toggle" class="flex h-6 w-6 cursor-pointer items-center justify-center">
+          <img src="../assets/icons/x-close.svg" alt="Close" class="h-6 w-6 dark:invert" />
+        </label>
+      </div>
+
+      <!-- Daftar menu -->
+      <nav class="flex flex-col gap-3 px-4">
+        <a href="#about" class="flex h-9 items-center rounded-full text-body-sm font-semibold">About</a>
+        <a href="#services" class="flex h-9 items-center rounded-full text-body-sm font-semibold">Services</a>
+        <a href="#portfolio" class="flex h-9 items-center rounded-full text-body-sm font-semibold">Portfolio</a>
+        <a href="#testimonials" class="flex h-9 items-center rounded-full text-body-sm font-semibold">Testimonials</a>
+        <a href="#faq" class="flex h-9 items-center rounded-full text-body-sm font-semibold">FAQ</a>
+        <a href="#contact"
+         class="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary-200 p-2 text-body-sm font-bold text-white shadow-[inset_4px_4px_4px_0_#FFFFFF40]">
+        Let&rsquo;s Talk </a>
+      </nav>
+    </div>
+
+  <!-- Kontainer utama: fleksibel -->
+  <main class="lg:mx-auto lg:max-w-[1440px]">
+    <section class="px-4 pt-[61px] lg:flex lg:items-center lg:justify-between lg:px-8 lg:pt-[44px] xl:px-[140px]">
+      <div class="flex flex-col gap-10 lg:w-[45%] lg:shrink-0 xl:w-[653px]">
+        <div class="flex flex-col gap-2">
+          <h1 class="font-display text-display-lg font-bold tracking-[-0.02em] lg:text-display-3xl">
+            Your Tech Partner for
+            <span class="text-primary-200">Smarter Growth</span>
+          </h1>
+          <p class="text-body-md font-semibold lg:text-body-xl">
+            We deliver tailored IT solutions to help you scale with speed and confidence.
+          </p>
+        </div>
+
+        <a href="#contact"
+           class="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary-200 p-2 text-body-sm font-bold text-white shadow-[inset_4px_4px_4px_0_#FFFFFF40] lg:w-[200px] lg:h-12 lg:gap-1 lg:text-body-md lg:tracking-[-0.02em]">
+          Let&rsquo;s Talk
+        </a>
+      </div>
+
+      <!-- Image Hero version light and darkmode -->
+      <img src="../assets/images/Image-Hero.png" alt="Image Hero"
+           class="mt-[43px] w-full lg:mt-0 lg:h-auto lg:w-[45%] lg:shrink-0 lg:object-contain lg:[mask-image:radial-gradient(circle_at_center,black_65%,transparent_100%)] lg:[-webkit-mask-image:radial-gradient(circle_at_center,black_65%,transparent_100%)] xl:h-[747px] xl:w-[747px] dark:hidden" />
+      <img src="../assets/images/Hero-ImageDark.png" alt="Image Hero Dark"
+           class="mt-[43px] hidden w-full lg:mt-0 lg:h-auto lg:w-[45%] lg:shrink-0 lg:object-contain lg:[mask-image:radial-gradient(circle_at_center,black_65%,transparent_100%)] lg:[-webkit-mask-image:radial-gradient(circle_at_center,black_65%,transparent_100%)] xl:h-[747px] xl:w-[747px] dark:block" />
+    </section>
+
+    <!-- Container banner company logo on top -->
+    <section class="flex flex-col gap-0 lg:gap-6 lg:py-10">
+      <p class="text-body-md font-bold tracking-[-0.02em] text-center text-neutral-25 lg:text-display-xs dark:text-white">
+        Trusted by Global Innovators &amp; Leading Brands
+      </p>
+      <div class="relative overflow-hidden">
+        <div class="isolate mx-auto flex w-max items-center gap-12 py-10">
+          <img src="../assets/images/Company-logo1.svg" alt="Lobel"      class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+          <img src="../assets/images/Company-logo2.svg" alt="Upwork"     class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+          <img src="../assets/images/Company-logo3.svg" alt="Zoom"       class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+          <img src="../assets/images/Company-logo4.svg" alt="Ostman"     class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal lg:h-12" />
+          <img src="../assets/images/Company-logo5.svg" alt="Databricks" class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal lg:h-12" />
+          <img src="../assets/images/Company-logo6.svg" alt="Airbnb"     class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal lg:h-12" />
+          <img src="../assets/images/Company-logo7.svg" alt="Dropbox"    class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+          <img src="../assets/images/Company-logo8.svg" alt="Paypal"     class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+          <img src="../assets/images/Company-logo9.svg" alt="Netflix"    class="h-[34px] w-auto mix-blend-luminosity dark:mix-blend-normal max-[769px]:hidden lg:h-12" />
+        </div>
+
+        <!-- Blankcard/Blurcard: fade gradient di tepi kiri & kanan -->
+        <div class="pointer-events-none absolute top-1/2 left-0 h-[98px] w-[45.55px] -translate-y-1/2 bg-[linear-gradient(90deg,white_36.1%,transparent_89.71%)] lg:h-[200px] lg:w-[260px] dark:bg-[linear-gradient(90deg,#0a0d12_36.1%,transparent_89.71%)]"></div>
+        <div class="pointer-events-none absolute top-1/2 right-0 h-[98px] w-[45.55px] -translate-y-1/2 bg-[linear-gradient(270deg,white_36.1%,transparent_89.71%)] lg:h-[200px] lg:w-[260px] dark:bg-[linear-gradient(270deg,#0a0d12_36.1%,transparent_89.71%)]"></div>
+      </div>
+    </section>
+
+    <!-- Container top-2 End to End IT Solutions That Drive Results -->
+    <section class="flex flex-col gap-6 px-4 pt-20 pb-20 lg:gap-16 lg:px-8 xl:px-[140px]">
+      <div class="flex flex-col gap-[11px]">
+        <h2 class="font-display text-display-sm font-bold tracking-[-0.02em] text-center text-neutral-25 lg:text-display-xl dark:text-white">
+          End-to-End IT Solutions That Drive Results
+        </h2>
+        <p class="text-body-sm font-medium text-center text-neutral-500 lg:text-body-lg lg:text-neutral-400 dark:text-white/60">
+          From strategy to execution, we deliver solutions that grow your business.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
+        <div class="flex aspect-square flex-col items-center justify-center gap-1.5 rounded-full border border-neutral-900 bg-neutral-950 p-4 dark:border-white/10 dark:bg-white/5">
+          <p class="font-display text-display-lg font-bold tracking-[-0.02em] text-center text-primary-200 lg:text-display-2xl">50+</p>
+          <p class="text-body-sm font-semibold text-center text-neutral-25 lg:text-body-xl dark:text-white">Projects Delivered</p>
+        </div>
+        <div class="flex aspect-square flex-col items-center justify-center gap-1.5 rounded-full border border-neutral-900 bg-neutral-950 p-4 dark:border-white/10 dark:bg-white/5">
+          <p class="font-display text-display-lg font-bold tracking-[-0.02em] text-center text-primary-200 lg:text-display-2xl">5+</p>
+          <p class="text-body-sm font-semibold text-center text-neutral-25 lg:text-body-xl dark:text-white">Years of Experience</p>
+        </div>
+        <div class="flex aspect-square flex-col items-center justify-center gap-1.5 rounded-full border border-neutral-900 bg-neutral-950 p-4 dark:border-white/10 dark:bg-white/5">
+          <p class="font-display text-display-lg font-bold tracking-[-0.02em] text-center text-primary-200 lg:text-display-2xl">10+</p>
+          <p class="text-body-sm font-semibold text-center text-neutral-25 lg:text-body-xl dark:text-white">Industry Awards Won</p>
+        </div>
+        <div class="flex aspect-square flex-col items-center justify-center gap-1.5 rounded-full border border-neutral-900 bg-neutral-950 p-4 dark:border-white/10 dark:bg-white/5">
+          <p class="font-display text-display-lg font-bold tracking-[-0.02em] text-center text-primary-200 lg:text-display-2xl">100%</p>
+          <p class="text-body-sm font-semibold text-center text-neutral-25 lg:text-body-xl dark:text-white">Client Satisfaction Rate</p>
+        </div>
+      </div>
+    </section>
+            
+    <!-- Container top 2 until 7, our process, smart it solutions,built for your industry, from vision, what partner say, need help -->
+    <section class="flex flex-col gap-6 px-4 pt-10 pb-10 lg:px-8 xl:px-[140px] lg:py-20">
+      <!-- Main-Container2 Our Process -->
+      <img src="../assets/images/Main-Container1.svg"         alt="Main Container 2"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container1-1.svg"       alt="Main Container 2"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConOurProcessmobile.png" alt="Main Container 2 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConOurProcess.png"       alt="Main Container 2 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+    <!-- Main-Container3 Smart IT -->
+    <section class="flex flex-col gap-10 px-4 pt-10 pb-10 lg:px-8 xl:px-[140px] lg:py-20">
+      <img src="../assets/images/Main-Container2.svg"   alt="Main Container 3"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container2-1.svg" alt="Main Container 3"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConSmartItMob.png" alt="Main Container 3 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConSmartIt.png"     alt="Main Container 3 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+    <!-- Main-Container4 Buitfor -->
+    <section class="flex flex-col gap-6 px-4 pt-10 pb-10 lg:px-8 xl:px-[140px] lg:py-20">
+      <img src="../assets/images/Main-Container3.svg"    alt="Main Container 4"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container3-1.svg"  alt="Main Container 4"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConBuiltforMob.png" alt="Main Container 4 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConBuiltfor.png"    alt="Main Container 4 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+    <!-- Main-Container5 From vision -->
+    <section class="flex flex-col gap-6 px-4 pt-10 pb-10 lg:px-8 xl:px-[140px] lg:py-20">
+      <img src="../assets/images/Main-Container4.svg"      alt="Main Container 5"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container4-1.svg"    alt="Main Container 5"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConFromvisionMob.png" alt="Main Container 5 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConFromvision.png"    alt="Main Container 5 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+    <!-- Main-Container6 What partner -->
+    <section class="flex flex-col gap-12 pt-10 pb-10 lg:py-20">
+      <img src="../assets/images/Main-Container5.svg"         alt="Main Container 6"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container5-1.svg"       alt="Main Container 6"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConWhatpartnersMob.png"  alt="Main Container 6 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConWhatpartners.png"     alt="Main Container 6 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+    <!-- Main-Container7 Needhelp -->
+    <section class="flex flex-col gap-6 px-4 pt-10 pb-10 lg:px-8 xl:px-[120px] lg:py-20">
+      <img src="../assets/images/Main-Container6.svg"    alt="Main Container 7"      class="h-auto w-full lg:hidden dark:hidden" />
+      <img src="../assets/images/Main-Container6-1.svg"  alt="Main Container 7"      class="hidden h-auto w-full lg:block dark:hidden" />
+      <img src="../assets/images/MainConNeedHelpMob.png" alt="Main Container 7 Dark" class="hidden h-auto w-full dark:max-lg:block" />
+      <img src="../assets/images/MainConNeedHelp.png"    alt="Main Container 7 Dark" class="hidden h-auto w-full dark:lg:block" />
+    </section>
+
+    <!-- Container ready to start -->
+    <section id="contact" class="flex flex-col gap-16 px-4 pt-10 lg:px-8 xl:px-[140px] lg:py-20">
+      <div class="flex flex-col gap-6 lg:mx-auto lg:w-full lg:max-w-[720px] lg:gap-12">
+        <div class="flex flex-col gap-4">
+          <h2 class="font-display text-display-sm font-bold tracking-[-0.02em] text-center text-neutral-25 lg:text-display-xl dark:text-white">
+            Ready to Start? Let&rsquo;s Talk.
+          </h2>
+          <p class="text-body-sm font-medium text-center text-[#A4A7AE] lg:text-body-lg dark:text-white/60">
+            Tell us what you need, and we&rsquo;ll get back to you soon.
+          </p>
+        </div>
+
+        <form class="flex flex-col gap-10">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-1.5">
+              <label for="name" class="text-body-sm font-bold text-neutral-25 dark:text-white">Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name"
+                     class="h-12 w-full rounded-xl border border-neutral-800 bg-white px-5 py-2 text-body-sm font-medium text-neutral-25 placeholder:text-neutral-500 lg:text-body-md dark:border-white/20 dark:bg-white/5 dark:text-white dark:placeholder:text-white/40" />
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="email" class="text-body-sm font-bold text-neutral-25 dark:text-white">Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter your email"
+                     class="h-12 w-full rounded-xl border border-neutral-800 bg-white px-5 py-2 text-body-sm font-medium text-neutral-25 placeholder:text-neutral-500 lg:text-body-md dark:border-white/20 dark:bg-white/5 dark:text-white dark:placeholder:text-white/40" />
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="message" class="text-body-sm font-bold text-neutral-25 dark:text-white">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Enter your message"
+                        class="h-[134px] w-full resize-none rounded-xl border border-neutral-800 bg-white px-5 py-2 text-body-sm font-medium text-neutral-25 placeholder:text-neutral-500 lg:text-body-md dark:border-white/20 dark:bg-white/5 dark:text-white dark:placeholder:text-white/40"></textarea>
+            </div>
+
+            <div class="flex flex-col gap-3.5">
+              <p class="text-body-sm font-bold text-neutral-25 dark:text-white">Services</p>
+                <div class="flex flex-col gap-3.5 lg:grid lg:grid-flow-col lg:grid-rows-3 lg:gap-x-[37px] lg:gap-y-4">
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25 lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="Web Development" checked
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      Web Development
+                  </label>
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25 lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="Mobile App Development"
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      Mobile App Development
+                  </label>
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25  lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="UI/UX Design"
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      UI/UX Design
+                  </label>
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25  lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="Cloud Solutions"
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      Cloud Solutions
+                  </label>
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25 lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="Software Development"
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      Software Development
+                  </label>
+                  <label class="flex items-center gap-3 text-body-sm font-medium text-neutral-25  lg:text-body-md dark:text-white">
+                    <input type="checkbox" name="services" value="Other"
+                         class="h-5 w-5 rounded-sm border border-neutral-800 accent-primary-200 dark:border-white/20" />
+                      Other
+                  </label>
+                </div>
+            </div>
+          </div>
+
+          <button type="submit"
+                  class="flex h-11 w-full items-center justify-center gap-1 rounded-full bg-primary-200 p-2 shadow-[inset_4px_4px_4px_0_#FFFFFF40] lg:h-12">
+            <span class="text-body-sm font-bold text-white lg:text-body-md">Send</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="px-4 py-6 lg:px-8 lg:py-10 xl:px-[140px]">
+      <div class="flex flex-col gap-6 rounded-3xl border border-neutral-900 bg-neutral-950 p-5 lg:gap-[60px] lg:p-10 dark:border-[#252B37] dark:bg-[#0A0D12]">
+
+        <!-- Header: Logo + Title -->
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="flex items-center gap-[8.48px] lg:order-2 lg:gap-[9.6px]">
+            <img src="../assets/icons/logo-symbol.png" alt="Logo" class="h-[28.66px] w-[26.13px] shrink-0 lg:h-[32.46px] lg:w-[29.59px]" />
+            <span class="text-[21.19px] leading-[31.79px] font-semibold text-neutral-25 lg:text-2xl lg:leading-9 dark:text-white">Your Logo</span>
+          </div>
+          <h2 class="font-display text-display-sm font-bold tracking-[-0.02em] text-neutral-25 lg:text-display-lg dark:text-white">
+            LET&rsquo;S DISCUSS YOUR IDEAS
+          </h2>
+        </div>
+
+        <div class="h-px w-full bg-neutral-900 dark:bg-[#252B37]"></div>
+
+        <!-- Footer: Menu + Social Media -->
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <nav class="flex flex-col gap-2 lg:flex-row lg:gap-0">
+            <a href="#about" class="rounded-full py-2 text-body-sm font-medium text-neutral-25 lg:px-4 lg:text-body-md dark:text-white">About</a>
+            <a href="#services" class="rounded-full py-2 text-body-sm font-medium text-neutral-25 lg:px-4 lg:text-body-md dark:text-white">Service</a>
+            <a href="#portfolio" class="rounded-full py-2 text-body-sm font-medium text-neutral-25 lg:px-4 lg:text-body-md dark:text-white">Projects</a>
+            <a href="#testimonials" class="rounded-full py-2 text-body-sm font-medium text-neutral-25 lg:px-4 lg:text-body-md dark:text-white">Testimonials</a>
+            <a href="#faq" class="rounded-full py-2 text-body-sm font-medium text-neutral-25 lg:px-4 lg:text-body-md dark:text-white">FAQ</a>
+          </nav>
+
+          <div class="flex items-center gap-4">
+            <a href="#" a-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 dark:border-[#252B37]">
+              <img src="../assets/icons/Sosmed-F.png" alt="Facebook" class="h-5 w-5 invert dark:invert-0" />
+            </a>
+            <a href="#" a-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 dark:border-[#252B37]">
+              <img src="../assets/icons/Sosmed-IG.png" alt="Instagram" class="h-5 w-5 invert dark:invert-0" />
+            </a>
+            <a href="#" a-label="LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 dark:border-[#252B37]">
+              <img src="../assets/icons/Sosmed-In.png" alt="LinkedIn" class="h-5 w-5 invert dark:invert-0" />
+            </a>
+            <a href="#" a-label="TikTok" class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 dark:border-[#252B37]">
+              <img src="../assets/icons/Sosmed-Tiktok.png" alt="TikTok" class="h-5 w-5 invert dark:invert-0" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </body>
+</html>
