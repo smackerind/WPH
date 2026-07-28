@@ -1,57 +1,104 @@
-# Challenge 2 - Basic Layout Implementation with HTML and Vanilla CSS
+# Assignment 1 - Landing Page + Git
 
-## Description
+## Selamat Datang
 
-In this assignment, you will implement the basic structure and visual style of a simple webpage using HTML and Vanilla CSS (without any additional CSS frameworks or libraries). The design you need to follow can be seen at the following Figma link:
+Halo teman-teman, selamat datang di assignment pertama kalian. Di minggu ini kita akan mulai dari fondasi paling penting dalam web development, yaitu HTML semantic, CSS dasar, dan Git sebagai version control. Anggap saja assignment ini sebagai pemanasan sebelum kita masuk ke materi yang lebih kompleks di minggu-minggu berikutnya.
 
-[Figma Design Link](https://www.figma.com/design/V8GNQPn1cu1NknDYWKrE49/Challenge-2?node-id=8411-143671&p=f&t=Yrqty4lBqudO1gbK-0)
+Tujuan saya memberikan assignment ini bukan sekadar agar kalian bisa menyelesaikan halaman web, tapi supaya kalian terbiasa dengan proses kerja seorang developer. Mulai dari membaca requirement, menulis struktur yang rapi, sampai mendokumentasikan progres kalian lewat commit Git.
 
-Breakpoint screen size: mobile < 768px, tablet 768–1024px, desktop > 1024px.
+## Konteks Assignment
 
-The goal of this assignment is to test your understanding of basic HTML structure, the use of CSS selectors, the box model, and your ability to translate visual designs into code.
+Kalian akan membuat satu halaman landing page sederhana. Tidak perlu kompleks, yang penting struktur dan dasarnya benar. Halaman ini akan menjadi pijakan pertama kalian dalam memahami bagaimana sebuah web dibangun dari nol.
 
-## Folder Structure
+## Checklist yang Harus Diselesaikan
 
-Below is the initial folder structure that has been provided for your project:
+1. HTML semantic yang lengkap dan sesuai konteks isinya.
+2. CSS untuk layout dasar dan typography yang konsisten.
+3. Push ke GitHub dengan minimal 3 commit yang pesannya jelas dan bermakna.
 
-- `Create folder Assets/images/`: This folder is used to store all images you might need in the design.
-- `Css/index.css`: This is where you will write all the CSS code to style your webpage.
-- `index.html`: This is the main HTML file where you will create the structure of your webpage.
+## Arahan dari Saya
 
-## Assignment Objectives
+Saya tidak akan memberikan jawaban langsung, karena yang paling berharga dari assignment ini justru proses eksplorasinya. Tapi saya akan bantu arahkan agar kalian tidak tersesat.
 
-1.  **Semantic HTML Structure:** Create a good and semantic HTML structure according to the layout in the Figma design. Use the appropriate HTML tags for each element (e.g., `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`, `<h1>` to `<h6>`, `<p>`, `<ul>`, `<li>`, `<a>`, `<img>`, etc.).
-2.  **Visual Styling with Vanilla CSS:** Implement the visual style of the webpage using pure CSS. Pay attention to things like:
-    - Element layout (e.g., using Flexbox or CSS Grid if necessary).
-    - Colors, fonts, text sizes, and other visual properties.
-    - Spacing (margin and padding) between elements.
-3.  **Simple Responsiveness (Optional):** If the Figma design shows different layouts for different screen sizes, try to implement simple responsiveness using _media queries_ in your CSS.
-4.  **Design Element Implementation:** Ensure that all the main visual elements in the Figma design (such as icons, images, and simple interactive elements) are accurately implemented.
-5.  **Responsive Testing:** You can test the responsiveness of your design using the _playground_ feature available on the top right of the Figma window when you open the design. This feature allows you to see how the design adapts to various common screen sizes.
+### 1. Sebelum Menulis Kode
 
-## Example Workflow
+Luangkan waktu sebentar untuk berpikir dulu sebelum tangan kalian menyentuh keyboard. Pertanyaan yang bisa kalian tanyakan ke diri sendiri:
 
-1.  **Study the Design:** Open the Figma link and understand the layout, elements, colors, and fonts used in the design. Observe how these elements are arranged on different screen sizes (if any) using the _playground_ on the top right.
-2.  **HTML Structure:** Create the `index.html` file and write the basic HTML structure according to the design. Identify the main sections of the page (header, navigation, main content, footer, etc.) and use relevant HTML tags.
-3.  **CSS Styling:** Create or edit the `Css/index.css` file to provide visual styles to your HTML elements. Use CSS selectors to target the appropriate elements and apply CSS properties according to the design.
-4.  **Testing:** Open the `index.html` file in your browser and compare the result with the design in Figma. Use the browser's _developer tools_ (usually by pressing F12) to test responsiveness on various screen sizes. Also, compare with the appearance in the Figma _playground_. Make adjustments to your HTML and CSS until the appearance matches the design on different screen sizes.
+- Halaman ini sebenarnya mau menyampaikan pesan apa ke pembacanya?
+- Bagian mana yang jadi pembuka, isi utama, dan penutup?
+- Kalau saya hilangkan seluruh styling, apakah strukturnya masih masuk akal dibaca dari atas ke bawah?
 
-## Evaluation System
+Kalau jawaban dari pertanyaan ketiga adalah ya, berarti kalian sudah di jalur yang benar untuk HTML semantic.
 
-The evaluation for this assignment will be based on the following criteria:
+### 2. Saat Menulis HTML
 
-1.  **Design Accuracy:** How accurately your implementation matches the design provided in Figma across different screen sizes.
-2.  **Semantic HTML Usage:** The correct and appropriate use of HTML tags according to the content structure.
-3.  **Effective CSS Usage:** The correct and efficient use of CSS selectors, as well as understanding of basic CSS properties and _media queries_ (if responsiveness is implemented).
-4.  **Code Readability and Organization:** HTML and CSS code that is well-structured, easy to read, and commented where necessary.
-5.  **Git Workflow:** Able to create a new branch and merge it back into the main branch.
+Kenali dulu tag-tag semantic yang tersedia. Coba pelajari perbedaan antara tag yang terlihat mirip tapi punya makna berbeda. Misalnya, kapan sebaiknya menggunakan `section` dan kapan menggunakan `article`. Apa bedanya `div` dengan tag semantic lainnya. Kenapa kita punya `header`, `main`, `nav`, dan `footer` padahal kita bisa saja pakai `div` untuk semuanya.
 
----
+Pemahaman ini akan sangat berguna tidak hanya untuk SEO dan accessibility, tapi juga untuk kode yang lebih mudah dibaca oleh developer lain di tim kalian nantinya.
 
-# How to Upload your Challenge
+### 3. Saat Menulis CSS
 
-Check this module: [click this](https://orchid-clematis-3e4.notion.site/Panduan-Penggunaan-Git-Untuk-Upload-Assignment-e2d80a19b3684f5d8f1a4209dcf85445?pvs=73)
+Mulailah dari layout dasar dulu, baru masuk ke detail visual. Pahami box model sebelum kalian sibuk dengan warna dan font. Biasakan juga menulis CSS yang konsisten, misalnya satuan yang dipakai, penamaan class, dan urutan property.
 
----
+Kalau kalian bingung harus mulai dari mana, coba pelajari konsep-konsep berikut satu per satu:
 
-🎉 Congratulations on working on this assignment! Utilize the _playground_ feature in Figma to help you understand how the design should look on various devices. Keep experimenting and don't hesitate to look for references if you encounter difficulties. You can definitely produce great work! 🚀 Keep up the spirit, cheers! 🎈
+- Box model dan bagaimana margin, padding, border, dan content saling berinteraksi.
+- Dasar layout dengan Flexbox.
+- Dasar typography seperti font-family, font-size, line-height, dan font-weight.
+
+### 4. Saat Menggunakan Git
+
+Ini bagian yang sering diremehkan tapi justru sangat penting. Saya ingin kalian membiasakan diri untuk commit secara bertahap, bukan sekali commit di akhir.
+
+Beberapa panduan yang bisa kalian pegang:
+
+- Satu commit idealnya merepresentasikan satu perubahan yang jelas.
+- Pesan commit harus bisa dimengerti oleh orang lain tanpa perlu membuka diff-nya.
+- Hindari pesan commit yang generik seperti "update", "fix", atau "final".
+
+Coba pikirkan pesan commit kalian seperti catatan untuk diri kalian sendiri tiga bulan ke depan. Apakah kalian akan mengerti apa yang kalian kerjakan hanya dari membaca pesan commit itu?
+
+## Struktur Folder
+
+Struktur awal yang sudah saya siapkan untuk kalian:
+
+- `Css/style.css` untuk seluruh CSS yang akan kalian tulis.
+- `index.html` untuk struktur HTML utama halaman kalian.
+
+## Workflow yang Disarankan
+
+1. Clone repository dari GitHub ke lokal kalian.
+2. Baca dulu design atau referensi yang diberikan dengan teliti. Jangan langsung coding.
+3. Bangun struktur HTML dari atas ke bawah sesuai alur kontennya.
+4. Setelah struktur HTML terasa sudah solid, baru masuk ke styling CSS.
+5. Commit setiap kali kalian menyelesaikan satu bagian yang bermakna.
+6. Push ke GitHub dan pastikan semua commit kalian sudah naik.
+
+## Kriteria Penilaian
+
+Berikut bobot penilaian yang akan saya gunakan. Tujuannya supaya kalian tahu di bagian mana harus fokus dan bagaimana saya menilai hasil kerja kalian secara objektif.
+
+| No  | Kriteria                                       | Bobot    |
+| --- | ---------------------------------------------- | -------- |
+| 1   | Penggunaan HTML Semantic yang tepat            | 30%      |
+| 2   | Efektivitas CSS untuk layout dan typography    | 30%      |
+| 3   | Keterbacaan dan kerapihan kode                 | 20%      |
+| 4   | Kualitas commit dan pesan commit di Git        | 20%      |
+|     | **Total**                                      | **100%** |
+
+Penjelasan singkat dari masing-masing kriteria:
+
+1. **HTML Semantic (30%)** saya menilai seberapa tepat kalian memilih tag sesuai maknanya, bukan hanya sekadar halaman jadi.
+2. **CSS Layout dan Typography (30%)** saya melihat apakah kalian paham box model, hierarki visual, dan konsistensi styling.
+3. **Keterbacaan Kode (20%)** indentasi, penamaan, dan struktur file yang rapi akan sangat membantu nilai di bagian ini.
+4. **Git (20%)** minimal 3 commit dengan pesan yang jelas dan bermakna. Commit yang asal-asalan akan mengurangi nilai di bagian ini meskipun halaman kalian sudah bagus.
+
+## Pesan Terakhir
+
+Jangan takut salah. Assignment ini ada bukan untuk menguji kalian dengan standar developer senior, tapi untuk melihat sejauh mana kalian bisa bertanggung jawab terhadap proses belajar kalian sendiri. Kalau kalian buntu, berhenti sebentar, jalan-jalan, atau baca dokumentasi resmi. Biasakan mencari jawaban dari sumber utama, bukan sekadar menyalin dari jawaban orang lain di internet.
+
+Kalau ada yang benar-benar tidak jelas setelah kalian coba dulu, datang ke saya dan kita diskusikan bersama. Saya jauh lebih senang membantu mentee yang sudah mencoba dan punya pertanyaan spesifik dibanding mentee yang diam saja karena takut salah.
+
+Selamat mengerjakan. Saya percaya kalian bisa.
+
+Mentor henry rivardo
