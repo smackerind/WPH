@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@theme {
+  /* ---------- Font family ----------*/
+     
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ---------- Warna ----------*/
+  --color-primary-200: #ff623e;
+  --color-neutral-25: #0a0d12;
+  --color-line: #d5d7da;
+  --color-neutral-400: #717680;
+  --color-neutral-500: #717680;
+  --color-neutral-800: #dfdfdf;
+  --color-neutral-900: #dedcdc;
+  --color-neutral-950: #fafafa;
+
+
+ 
+  --text-display-3xl: 56px;   --text-display-3xl--line-height: 68px;
+  --text-display-2xl: 48px;   --text-display-2xl--line-height: 60px;
+  --text-display-xl: 40px;    --text-display-xl--line-height: 56px;
+  --text-display-lg: 36px;    --text-display-lg--line-height: 44px;
+  --text-display-md: 32px;    --text-display-md--line-height: 42px;
+  --text-display-sm: 28px;    --text-display-sm--line-height: 38px;
+  --text-display-xs: 24px;    --text-display-xs--line-height: 36px;
+
+  --text-body-xl: 20px;       --text-body-xl--line-height: 34px;
+  --text-body-lg: 18px;       --text-body-lg--line-height: 32px;
+  --text-body-md: 16px;       --text-body-md--line-height: 30px;
+  --text-body-sm: 14px;       --text-body-sm--line-height: 28px;
+  --text-body-xs: 12px;       --text-body-xs--line-height: 24px;
+}
