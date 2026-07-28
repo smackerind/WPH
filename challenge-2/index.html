@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment02</title>
+    <link rel="stylesheet" href="../Assignment02/css/style.css" />
+</head>
+<body>
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header class="header">
+
+    <!-- Logo -->
+    <a href="#" class="logo">Tech.</a>
+
+    <!-- Navigasi (tampil di desktop > 1024px) -->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#" class="nav__item">About</a></li>
+        <li><a href="#" class="nav__item">Service</a></li>                
+        <li><a href="#" class="nav__item">Our Work</a></li>
+        <li><a href="#" class="nav__item">Team</a></li>
+      </ul>
+    </nav>
+
+    <!-- Tombol Contact Us (desktop) -->
+    <a href="#" class="btn btn--desktop">
+       <span class="btn__label">Contact Us</span>
+    </a>
+
+    <!-- checkbox  -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    
+    <!-- Tombol hamburger (tampil di mobile & tablet <= 1024px) -->
+    <label for="nav-toggle" class="hamburger">
+      <img src="../Assignment02/assets/images/Icon-Humberger.svg" class="icon" alt="TombolHumberger">
+    </label>
+
+    <!-- ============ OVERLAY MENU (mobile) ============ -->
+    <div class="mobile-menu" role="dialog">
+      <div class="mobile-menu__header">
+        <span class="logo">Tech.</span>
+        <label for="nav-toggle" class="x-close">
+          <img src="../Assignment02/assets/images/Icon-X.svg" class="icon" alt="Tombol-X">
+        </label>
+      </div>
+
+      <nav class="mobile-menu__nav">
+        <a href="#" class="mobile-menu__item">About</a>
+        <a href="#" class="mobile-menu__item">Service</a>
+        <a href="#" class="mobile-menu__item">Our Work</a>
+        <a href="#" class="mobile-menu__item">Team</a>
+        <a href="#" class="btn btn--block"><span class="btn__label">Contact Us</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  
+<!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+      <!-- Kolom kiri: teks + tombol -->
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title">Build with the <em>Future.</em></h1>
+          <p class="hero__subtitle">
+            From building sleek websites and mobile apps to integrating AI
+            solutions, we help brands turn ideas into powerful digital
+            experiences that connect, engage, and scale.
+          </p>
+        </div>
+
+        <a href="#" class="btn btn--hero">
+          <span class="btn__label">Let&rsquo;s Talk</span>
+        </a>
+      </div>
+
+      <!-- Kolom kanan: gambar tangan memegang HP -->
+      <div class="hero__media">
+        <img class="hero__image" src="../Assignment02/assets/images/hand.png" alt="Tangan memegang HP">
+      </div>
+    </section>
+
+<!-- ============ WHO WE ARE SECTION ============ -->
+    <section class="who">
+      <h2 class="who__title">Who We Are</h2>
+      <p class="who__desc">
+        We&rsquo;re a group of tech students trained in
+        <strong>building real-world digital products</strong>. From coding to
+        design, we <strong>craft modern solutions for modern problems</strong>.
+      </p>
+    </section>
+
+    <!-- ============ WHAT WE DO SECTION ============ -->
+    <section class="services">
+      <div class="services__head">
+        <h2 class="services__title">What We Do</h2>
+        <p class="services__subtitle">
+          We offer simple tech solutions to help your ideas grow.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/Service-Card-01-1.svg" alt="Web Development"/>
+          <div class="card__body">
+            <h3 class="card__title">Web Development</h3>
+            <p class="card__desc">
+              Modern websites using HTML, CSS, JavaScript, and frameworks.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/Mobile.svg" alt="Mobile"/>
+          <div class="card__body">
+            <h3 class="card__title">App Development</h3>
+            <p class="card__desc">
+              Mobile and desktop apps tailored for your needs.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/AI.svg" alt="AI Integration"/>
+          <div class="card__body">
+            <h3 class="card__title">AI Integration</h3>
+            <p class="card__desc">
+              Smart solutions using AI-powered tools and automation.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/Paint.svg" alt="UI/UX Design"/>
+          <div class="card__body">
+            <h3 class="card__title">UI/UX Design</h3>
+            <p class="card__desc">
+              Clean and functional designs for better user experience.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/Landing-Page.svg" alt="Landing Page Design"/>
+          <div class="card__body">
+            <h3 class="card__title">Landing Page Design</h3>
+            <p class="card__desc">
+              High-converting landing pages for your product or business.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <img class="card__icon" src="../Assignment02/assets/images/CMS.svg" alt="CMS Integration"/>
+          <div class="card__body">
+            <h3 class="card__title">CMS Integration</h3>
+            <p class="card__desc">
+              Easy-to-manage websites with WordPress or Webflow.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ OUR WORK SECTION ============ -->
+    <section class="work">
+      <div class="work__head">
+        <h2 class="work__title">Our Work</h2>
+        <p class="work__subtitle">
+          See what we&rsquo;ve built with passion and purpose
+        </p>
+      </div>
+
+      <div class="work__grid">
+        <!-- Portfolio 1 -->
+        <figure class="portfolio">
+          <img class="portfolio__img" src="../Assignment02/assets/images/Portfolio-1.svg" alt="Portfolio-1" />
+          <p class="portfolio__caption">Portofolio 1</p>
+        </figure>
+
+        <!-- Portfolio 2 -->
+        <figure class="portfolio">
+          <img class="portfolio__img" src="../Assignment02/assets/images/Portfolio-2.svg" alt="Portfolio-2" />
+          <p class="portfolio__caption">Portofolio 2</p>
+        </figure>
+
+        <!-- Portfolio 3 -->
+        <figure class="portfolio">
+          <img class="portfolio__img" src="../Assignment02/assets/images/Portfolio-3.svg" alt="Portfolio-3" />
+          <p class="portfolio__caption">Portofolio 3</p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ MEET THE TEAM SECTION ============ -->
+    <section class="team">
+      <div class="team__head">
+        <h2 class="team__title">Meet the Team</h2>
+        <p class="team__subtitle">A group of future-ready tech makers.</p>
+      </div>
+
+      <div class="team__grid">
+        <!-- Member 1 -->
+        <article class="member">
+          <img class="member__photo" src="../Assignment02/assets/images/Team-1.svg" alt="Team-1" />
+          <div class="member__body">
+            <h3 class="member__name">Jasper Kim</h3>
+            <p class="member__role">Project Manager</p>
+          </div>
+        </article>
+
+        <!-- Member 2 -->
+        <article class="member">
+          <img class="member__photo" src="../Assignment02/assets/images/Team-2.svg" alt="Team-2" />
+          <div class="member__body">
+            <h3 class="member__name">Alex Jonathan</h3>
+            <p class="member__role">Full-stack Developer</p>
+          </div>
+        </article>
+
+        <!-- Member 3 -->
+        <article class="member">
+          <img class="member__photo" src="../Assignment02/assets/images/Team-3.svg" alt="Team-3" />
+          <div class="member__body">
+            <h3 class="member__name">Mario Lopez</h3>
+            <p class="member__role">UI/UX Designer</p>
+          </div>
+        </article>
+
+        <!-- Member 4 -->
+        <article class="member">
+          <img class="member__photo" src="../Assignment02/assets/images/Team-4.svg" alt="Team-4" />
+          <div class="member__body">
+            <h3 class="member__name">Jasper Kim</h3>
+            <p class="member__role">Data Scientist</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+<!-- ============ LET'S COLLABORATE SECTION ============ -->
+    <section class="collab">
+
+      <div class="collab__head">
+        <h2 class="collab__title">Let&rsquo;s Collaborate</h2>
+        <p class="collab__subtitle">Need a tech team? We&rsquo;re ready to help</p>
+      </div>
+
+      <form class="collab__form">
+        <div class="collab__fields">
+          <div class="field">
+            <label class="field__label" for="name">Name</label>
+            <input class="field__input" type="text" id="name" name="name"
+                   placeholder="Enter your name" required />
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="email">Email</label>
+            <input class="field__input" type="email" id="email" name="email"
+                   placeholder="Enter your email" required />
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="message">Message</label>
+            <textarea class="field__textarea" id="message" name="message"
+                      placeholder="Enter your message" required></textarea>
+          </div>
+        </div>
+
+        <button class="collab__submit" type="submit">Send</button>
+      </form>
+    </section>
+
+<!-- ============ FOOTER SECTION ============ -->
+  <footer class="footer">
+    <p class="footer__text">
+      &copy; 2025 Web Programming Hack. All rights reserved.
+    </p>
+  </footer>
+</body>
+</html>
+

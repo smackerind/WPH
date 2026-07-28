@@ -1,0 +1,1139 @@
+﻿:root {
+  /* Colors */
+  --base-black: #000000;
+  --base-pure-white: #ffffff;
+  --neutral-25: #fdfdfd;
+  --neutral-500: #717680;
+  --primary-100: #421abc;
+  --header-bg-desktop: rgba(0, 0, 0, 0.6); /* #00000099 */
+  --border-subtle: rgba(253, 253, 253, 0.12);
+  --item-hover: rgba(253, 253, 253, 0.08);
+  --neutral-800: rgba(253, 253, 253, 0.2);
+  --neutral-900: rgba(253, 253, 253, 0.12);
+  --hero-gradient: linear-gradient(180deg,#000000 17.55%,rgba(33, 10, 94, 0.3) 136.21%  );
+   
+  --font-family-display: "Space Grotesk", "Inter", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+ 
+  /* Font size / line-height  */
+  --display-3xl-size: 56px;   --display-3xl-line: 68px;
+  --display-2xl-size: 48px;   --display-2xl-line: 60px;
+  --display-xl-size:  40px;   --display-xl-line:  56px;
+  --display-lg-size:  36px;   --display-lg-line:  44px;
+  --display-md-size:  32px;   --display-md-line:  42px;
+  --display-sm-size:  28px;   --display-sm-line:  38px;
+  --display-xs-size:  24px;   --display-xs-line:  36px;
+
+  --text-xl-size: 20px;   --text-xl-line: 34px;
+  --text-lg-size: 18px;   --text-lg-line: 32px;
+  --text-md-size: 16px;   --text-md-line: 30px;
+  --text-sm-size: 14px;   --text-sm-line: 28px;
+
+  --text-lg-semibold-line: 28px;
+  --hero-title-mobile-line: 48px;
+  --nav-item-line: 20px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+  --spacing-2xl: 20px;
+  --spacing-3xl: 24px;
+  --spacing-4xl: 32px;
+
+  /* Radius */
+  --radius-full: 9999px;
+
+  /* Header sizing */
+  --header-h-mobile: 64px;
+  --header-h-desktop: 84px;
+  --header-px-mobile: 16px;
+  --header-px-desktop: 140px;
+
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--base-black);
+  color: var(--neutral-25);
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================
+   BASE = MOBILE & TABLET (≤ 1024px) Logo kiri + tombol hamburger kanan
+   ========================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--header-h-mobile);
+  padding: 0 var(--header-px-mobile);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--base-black);
+}
+
+/* Logo "Tech." — display-xs */
+.logo {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-xs-size);
+  line-height: var(--display-xs-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Desktop nav & desktop CTA disembunyikan di mobile/tablet */
+.nav,
+.btn.btn--desktop {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-25);
+  cursor: pointer;
+}
+
+.hamburger:focus-visible,
+.x-close:focus-visible {
+  outline: 2px solid var(--primary-100);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- Overlay menu (state saat hamburger di-checklist) ---------- */
+.nav-toggle { display: none; }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--base-black);
+}
+
+/* CSS-only toggle: buka overlay ketika checkbox tercentang */
+.nav-toggle:checked ~ .mobile-menu {
+  display: flex;
+}
+
+/* Header di dalam overlay: logo + tombol X */
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h-mobile);
+  padding: 0 var(--header-px-mobile);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.x-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-25);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+/* Daftar menu vertikal */
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+}
+
+.mobile-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  height: 36px;
+  padding: var(--spacing-md) 0;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  color: var(--neutral-25);
+}
+
+/* ---------- Tombol Contact Us ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  border-radius: var(--radius-full);
+  background: var(--primary-100);
+  color: var(--base-pure-white);
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.btn:hover { filter: brightness(1.12); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--base-pure-white);
+  outline-offset: 2px;
+}
+
+/* Contact Us versi overlay: full width, tinggi 48px */
+.btn--block {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+}
+
+/* Ikon chevron & lainnya mengikuti warna teks */
+.icon {
+  flex: none;
+  display: block;
+}
+
+/* ============================================================
+   DESKTOP (> 1024px)  →  nav lengkap + tombol Contact Us
+   ============================================================ */
+@media (min-width: 1024px) {
+  .header {
+    height: var(--header-h-desktop);
+    padding: 0 var(--header-px-desktop);
+    background: var(--header-bg-desktop);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+  }
+
+  /* Hamburger & overlay tidak dipakai di desktop */
+  .hamburger,
+  .mobile-menu {
+     display: none;
+  }
+
+  /* Nav utama */
+  .nav { display: block; }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .nav__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    height: 36px;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-full);
+    font-family: var(--font-family-body);
+    font-weight: 400;
+    font-size: var(--text-sm-size);
+    line-height: var(--text-sm-line);
+    color: var(--neutral-25);
+    transition: background 0.15s ease;
+  }
+
+  .nav__item:hover { background: var(--item-hover); }
+
+  .nav__item:focus-visible {
+    outline: 2px solid var(--neutral-25);
+    outline-offset: 2px;
+  }
+
+  /* Tombol Contact Us desktop */
+  .btn.btn--desktop {
+    display: inline-flex;
+    height: 44px;
+    padding: var(--spacing-md);
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   HERO SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   Teks di atas, gambar tangan di bawah
+   ============================================================ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px 20px 0;
+  background: var(--hero-gradient);
+  overflow: hidden;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Title-1 — display-xl  */
+.hero__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-xl-size);
+  line-height: var(--display-xl-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-25);
+}
+
+/* Kata "Future.   */
+.hero__title em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Title-2 — text-md / Regular */
+.hero__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-500);
+}
+
+/* Tombol "Let's Talk" — full width di mobile */
+.btn--hero {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-md);
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+}
+
+/* Gambar tangan memegang HP */
+.hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  max-width: 308.85px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- HERO (desktop) ---------- */
+@media (min-width: 1025px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 750px;
+    padding: 0 var(--header-px-desktop);
+  }
+
+  .hero__content {
+    flex: none;
+    width: 687px;
+    gap: 48px;
+  }
+
+  .hero__text { gap: var(--spacing-xl); }
+
+  .hero__title {
+    font-size: var(--display-3xl-size);
+    line-height: var(--display-3xl-line);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: 0;
+  }
+
+  /* Tombol "Let's Talk" */
+  .btn--hero {
+    width: 300px;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+
+  .btn--hero .btn__label { padding-left: var(--spacing-md); }
+
+  /* Gambar tangan */
+  .hero__media {
+    flex: none;
+    align-self: flex-end;
+  }
+
+  .hero__image {
+    max-width: 490.64px;
+    margin-bottom: -1px;
+  }
+}
+
+/* ============================================================
+   WHO WE ARE SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+.who {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+  text-align: center;
+}
+
+.who__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+.who__desc {
+  max-width: 354px;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-semibold-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+.who__desc strong {
+  font-weight: 600;
+  color: var(--neutral-25);
+}
+
+/* ---------- WHO WE ARE (desktop) ---------- */
+@media (min-width: 1025px) {
+  .who {
+    gap: var(--spacing-4xl);
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .who__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  .who__desc {
+    max-width: 1160px;
+    font-family: var(--font-family-display);
+    font-size: var(--display-md-size);
+    line-height: var(--display-md-line);
+    letter-spacing: -0.02em;
+  }
+}
+
+
+/* ============================================================
+   WHAT WE DO SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 16px;
+  background: var(--base-black);
+  text-align: center;
+}
+
+/* --- Judul section --- */
+.services__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 348px;
+}
+
+/* Title-1 — display-sm */
+.services__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-sm */
+.services__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size); 
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* --- Grid kartu: 2 kolom di mobile --- */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl); 
+  width: 100%;
+  max-width: 348px;
+}
+
+/* --- Kartu --- */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  background: var(--base-black);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--primary-100);
+  transform: translateY(-2px);
+}
+
+/* Ikon 48×48 */
+.card__icon {
+  flex: none;
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Kontainer deskripsi */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Judul kartu — text-lg */
+.card__title {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Deskripsi kartu — text-sm */
+.card__desc {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .services {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .services__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl / Bold */
+  .services__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .services__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Grid: 3 kolom, gap 20px*/
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+    max-width: 1160px;
+  }
+
+  .card {
+    padding: var(--spacing-3xl);
+  }
+
+  /* Judul kartu — text-xl */
+  .card__title {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Deskripsi kartu — text-md  */
+  .card__desc {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   OUR WORK SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.work__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm */
+.work__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md  */
+.work__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-500);
+}
+
+/* --- Grid portfolio: 1 kolom di mobile --- */
+.work__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  width: 100%;
+  max-width: 361px;
+}
+
+/* --- Kartu portfolio --- */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* Gambar — persegi */
+.portfolio__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+ }
+
+/* Caption — text-md */
+.portfolio__caption {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .work {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .work__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .work__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .work__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Grid: 3 kolom, gap 20px */
+  .work__grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1159px;
+  }
+
+  .portfolio {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Caption — text-xl */
+  .portfolio__caption {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   MEET THE TEAM SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.team__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm */
+.team__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md */
+.team__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size); 
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em; 
+  color: var(--neutral-500);
+}
+
+/* --- Grid anggota: 2 kolom di mobile --- */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--spacing-2xl);
+  row-gap: var(--spacing-3xl);
+  width: 100%;
+  max-width: 340px;
+}
+
+/* --- Kartu anggota --- */
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Foto bulat  */
+.member__photo {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--neutral-900);
+}
+
+.member__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Nama — text-md  */
+.member__name {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Jabatan — text-sm */
+.member__role {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .team {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop);
+  }
+
+  .team__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .team__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg  */
+  .team__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Grid: 4 kolom sejajar, gap 56px */
+  .team__grid {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 56px;
+    row-gap: 56px;
+    max-width: 1160px;
+  }
+
+  .member {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Foto 220px */
+  .member__photo {
+    max-width: 220px;
+  }
+
+  /* Nama — text-xl  */
+  .member__name {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Jabatan — text-md  */
+  .member__role {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   Let's Collaborate SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+
+.collab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding: 40px 20px;
+  background: var(--base-black);
+}
+
+/* --- Judul section --- */
+.collab__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 353px;
+  text-align: center;
+}
+
+/* Title-1 — display-sm  */
+.collab__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--display-sm-size);
+  line-height: var(--display-sm-line);
+  letter-spacing: -0.02em;
+  color: var(--neutral-25);
+}
+
+/* Title-2 — text-md */
+.collab__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em;
+  color: var(--neutral-500);
+}
+
+/* --- Form --- */
+.collab__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
+  width: 100%;
+  max-width: 353px;
+}
+
+.collab__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Satu grup: label + input */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Label — text-sm  */
+.field__label {
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  color: var(--neutral-25);
+}
+
+/* Input & textarea — text-md */
+.field__input,
+.field__textarea {
+  width: 100%;
+  padding: 8px var(--spacing-xl); 
+  border: 2px solid var(--neutral-800);
+  border-radius: var(--radius-xl);
+  background: var(--base-black);
+  color: var(--neutral-25);
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  letter-spacing: -0.03em; 
+  transition: border-color 0.15s ease;
+}
+
+.field__input { height: 48px; }
+
+.field__textarea {
+  min-height: 134px;
+  resize: vertical;
+}
+
+/* Placeholder — Neutral-500 */
+.field__input::placeholder,
+.field__textarea::placeholder {
+  color: var(--neutral-500);
+  opacity: 1;
+}
+
+.field__input:focus,
+.field__textarea:focus {
+  outline: none;
+  border-color: var(--primary-100);
+}
+
+/* --- Tombol Send --- */
+.collab__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+  height: 44px;
+  padding: var(--spacing-md);               
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--primary-100);
+  color: var(--base-pure-white);
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.collab__submit:hover { filter: brightness(1.12); }
+
+.collab__submit:focus-visible {
+  outline: 2px solid var(--base-pure-white);
+  outline-offset: 2px;
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  .collab {
+    gap: 64px;
+    padding: 80px var(--header-px-desktop) 120px;  /* atas 80 / bawah 120 */
+  }
+
+  .collab__head {
+    gap: var(--spacing-xl);
+    max-width: 1160px;
+  }
+
+  /* Title-1 — display-xl */
+  .collab__title {
+    font-size: var(--display-xl-size);
+    line-height: var(--display-xl-line);
+    letter-spacing: -0.03em;
+  }
+
+  /* Title-2 — text-lg */
+  .collab__subtitle {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-line);
+  }
+
+  /* Form lebar 592px, gap 40px */
+  .collab__form {
+    max-width: 592px;
+    gap: 40px;
+  }
+
+  .collab__fields {
+    gap: var(--spacing-2xl);
+  }
+
+  /* Tombol Send — tinggi 48px, text-md */
+  .collab__submit {
+    height: 48px;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ============================================================
+   FOOTER SECTION — BASE = MOBILE & TABLET (≤ 1024px)
+   ============================================================ */
+
+/* ---------- BASE = MOBILE & TABLET (≤ 1024px) ---------- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);               /* 8px */
+  padding: 24px 8px;
+  border-top: 1px solid var(--neutral-900);
+  background: var(--base-black);
+}
+
+/* Teks copyright — text-xs / Regur */
+.footer__text {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-line);
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--neutral-500);
+}
+
+/* ---------- DESKTOP (> 1024px) ---------- */
+@media (min-width: 1025px) {
+  /* Teks copyright — text-md  */
+  .footer__text {
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-line);
+    letter-spacing: -0.03em;
+  }
+}
