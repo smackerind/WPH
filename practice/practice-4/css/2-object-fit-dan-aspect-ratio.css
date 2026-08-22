@@ -1,0 +1,46 @@
+/* .container {
+  background-color: red;
+  width: 100px;
+  aspect-ratio: 1/1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+} */
+
+.card {
+  width: 200px;
+  height: 400px;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 0.2;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+}
+
+.card h2 {
+  font-size: 15px;
+}
+
+.card h3 {
+  font-size: 30px;
+  text-align: right;
+  color: red;
+}
+
+.card progress {
+  width: 100%;
+}

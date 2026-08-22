@@ -1,0 +1,68 @@
+/* 1. Pseudo Class */
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+button:active {
+  background-color: pink;
+  color: black;
+}
+
+input:focus {
+  outline: 2px solid red;
+  border: none;
+  border-radius: 1px;
+}
+
+/* 2. Pseudo Element */
+li {
+  list-style: none;
+}
+
+li::before {
+  content: '👉🏻';
+}
+li::after {
+  content: '👈🏻';
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: #6366f1;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #6366f1;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(200%);
+}
