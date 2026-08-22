@@ -1,0 +1,22 @@
+.merah {
+  background-color: red;
+}
+
+.biru {
+  background-color: blue;
+}
+
+.hijau {
+  background-color: green;
+}
+
+.container {
+  background-color: black;
+  height: 500px;
+
+  display: grid;
+  gap: 10px;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}

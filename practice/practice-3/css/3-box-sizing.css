@@ -1,0 +1,24 @@
+.kotak {
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.merah {
+  background-color: red;
+  padding: 20px;
+  border: 10px;
+  box-sizing: content-box;
+}
+.biru {
+  background-color: blue;
+  padding: 20px;
+  border: 10px;
+  box-sizing: border-box; /* Nilai real untuk width */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}

@@ -1,0 +1,26 @@
+.kotak {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition: transform ease-in-out 0.3s;
+}
+
+div {
+  margin-inline: 200px;
+}
+
+.translate:hover {
+  transform: translate(200px, 50px);
+}
+
+.scale:hover {
+  transform: scale(1.8);
+}
+
+.rotate:hover {
+  transform: rotate(45deg);
+}
+
+.skew:hover {
+  transform: skew(45deg);
+}

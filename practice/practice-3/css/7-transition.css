@@ -1,0 +1,11 @@
+.kotak {
+  width: 100px;
+  height: 100px;
+  margin-inline: 200px;
+  background-color: red;
+  transition: transform 0.2s ease-in-out 2s;
+}
+
+.kotak:hover {
+  transform: skew(20deg);
+}

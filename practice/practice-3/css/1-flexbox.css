@@ -1,0 +1,53 @@
+.kotak {
+  width: 100px;
+  height: 100px;
+}
+
+.merah {
+  background-color: red;
+}
+
+.biru {
+  background-color: blue;
+}
+
+.hijau {
+  background-color: green;
+}
+
+/* 1. FLEX CONTAINER : FOKUS KE PARENT */
+.container,
+.container-item {
+  display: flex;
+  background-color: black;
+  height: 500px;
+
+  /* 1. Flex Direction : Menentukan arah main axis. */
+  /* flex-direction: row; */
+
+  /* 2. Flex Wrap : Menentukan apakah item-item di dalam flex container akan membentuk baris baru jika tidak cukup ruang. */
+  /* flex-wrap: wrap; */
+
+  /* 3. Flex Flow : Short Hand untuk Flex Direction dan Flex Wrap. */
+  flex-flow: row nowrap;
+
+  /* 4. Justify Content : Mengatur distribusi ruang sepanjang MAIN axis. */
+  justify-content: center;
+
+  /* 5. Align Items : Mengatur posisi item di CROSS axis. */
+  align-items: center;
+
+  /* 6. Align Content : Mengatur distribusi ruang di antara item-item di dalam flex container. */
+  align-content: space-around;
+
+  /* 7. Gap : Mengatur ruang antara item-item di dalam flex container. */
+  gap: 10px;
+}
+
+/* 2. FLEX ITEM : FOKUS KE CHILD */
+.container-item {
+  color: white;
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+}
