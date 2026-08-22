@@ -1,0 +1,1 @@
+/* Jika menggunakan tailwind css tidak perlu reset CSS karena Tailwind sudah menyertakan reset CSS bawaan yang disebut "Preflight". Preflight ini mengatur gaya dasar elemen HTML agar konsisten di berbagai browser, sehingga Anda tidak perlu menambahkan reset CSS tambahan. */

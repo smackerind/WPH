@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Agency - Tailwind CSS</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- CSS Tambahan / Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <nav
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <h1 class="text-2xl font-bold text-blue-600">DigitalAgency</h1>
+        <ul class="hidden md:flex gap-8 font-medium">
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+          <li>
+            <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+          </li>
+          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+        <div class="flex gap-3">
+          <a
+            class="px-4 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition"
+            >Login</a
+          >
+          <a
+            class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+            >Get Started</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="bg-gradient-to-r from-blue-50 to-indigo-100">
+      <div
+        class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <span
+            class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold"
+            >Modern Digital Agency</span
+          >
+          <h1 class="text-5xl font-bold mt-6 leading-tight">
+            Build Beautiful Digital Experiences
+          </h1>
+          <p class="mt-6 text-slate-600 text-lg">
+            Create responsive websites, mobile apps, and digital products with a
+            modern development workflow.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700"
+              >Start Project</a
+            >
+            <a
+              class="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white"
+              >Learn More</a
+            >
+          </div>
+        </div>
+        <div>
+          <img
+            src="images/hero.png"
+            class="rounded-3xl shadow-2xl"
+            alt="Hero"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-center text-3xl font-bold mb-10">Trusted By</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Google
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Microsoft
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Spotify
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Netflix
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Adobe
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-6 text-center font-semibold text-slate-500 hover:text-blue-600"
+          >
+            Slack
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <img src="images/about.jpg" class="rounded-3xl shadow-xl" />
+        <div>
+          <h2 class="text-4xl font-bold mb-6">About Us</h2>
+          <p class="text-slate-600 mb-6">
+            We build scalable software solutions using modern technologies and
+            user-centered design.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 bg-white rounded-xl shadow p-4">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"
+              >
+                ✓
+              </div>
+              <span>Experienced Team</span>
+            </div>
+            <div class="flex items-center gap-4 bg-white rounded-xl shadow p-4">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"
+              >
+                ✓
+              </div>
+              <span>Modern Technology</span>
+            </div>
+            <div class="flex items-center gap-4 bg-white rounded-xl shadow p-4">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"
+              >
+                ✓
+              </div>
+              <span>Responsive Design</span>
+            </div>
+            <div class="flex items-center gap-4 bg-white rounded-xl shadow p-4">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"
+              >
+                ✓
+              </div>
+              <span>Customer Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-20 bg-slate-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">💻</div>
+            <h3 class="text-xl font-bold mb-3">Web Development</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">📱</div>
+            <h3 class="text-xl font-bold mb-3">Mobile Apps</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-3">UI/UX</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">☁️</div>
+            <h3 class="text-xl font-bold mb-3">Cloud</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">📈</div>
+            <h3 class="text-xl font-bold mb-3">SEO</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+          >
+            <div class="text-5xl mb-4">🚀</div>
+            <h3 class="text-xl font-bold mb-3">Marketing</h3>
+            <p class="text-slate-600">
+              Professional solution tailored for your business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Portfolio</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project1.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 1</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project2.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 2</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project3.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 3</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project4.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 4</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project5.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 5</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow overflow-hidden hover:shadow-xl transition"
+          >
+            <img src="images/project6.jpg" class="h-56 w-full object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl">Project 6</h3>
+              <p class="text-blue-600">Web Application</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-blue-600 text-white">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center"
+      >
+        <div>
+          <h3 class="text-5xl font-bold">120+</h3>
+          <p class="mt-2">Projects</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold">80+</h3>
+          <p class="mt-2">Clients</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold">15+</h3>
+          <p class="mt-2">Years</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold">25</h3>
+          <p class="mt-2">Experts</p>
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Team</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <img
+              src="images/team-1.jpg"
+              class="w-32 h-32 rounded-full mx-auto object-cover"
+            />
+            <h3 class="mt-4 font-bold">Member 1</h3>
+            <p class="text-blue-600">Frontend Developer</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <img
+              src="images/team-2.jpg"
+              class="w-32 h-32 rounded-full mx-auto object-cover"
+            />
+            <h3 class="mt-4 font-bold">Member 2</h3>
+            <p class="text-blue-600">Frontend Developer</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <img
+              src="images/team-3.jpg"
+              class="w-32 h-32 rounded-full mx-auto object-cover"
+            />
+            <h3 class="mt-4 font-bold">Member 3</h3>
+            <p class="text-blue-600">Frontend Developer</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <img
+              src="images/team-4.jpg"
+              class="w-32 h-32 rounded-full mx-auto object-cover"
+            />
+            <h3 class="mt-4 font-bold">Member 4</h3>
+            <p class="text-blue-600">Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-slate-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Testimonials</h2>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl shadow p-8">
+            <p class="text-amber-500 text-xl">★★★★★</p>
+            <p class="my-4 italic text-slate-600">
+              Outstanding service and great communication.
+            </p>
+            <div class="flex items-center gap-4">
+              <img src="images/user1.jpg" class="w-14 h-14 rounded-full" />
+              <div>
+                <h4 class="font-bold">Client 1</h4>
+                <span class="text-sm text-slate-500">CEO</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow p-8">
+            <p class="text-amber-500 text-xl">★★★★★</p>
+            <p class="my-4 italic text-slate-600">
+              Outstanding service and great communication.
+            </p>
+            <div class="flex items-center gap-4">
+              <img src="images/user2.jpg" class="w-14 h-14 rounded-full" />
+              <div>
+                <h4 class="font-bold">Client 2</h4>
+                <span class="text-sm text-slate-500">CEO</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow p-8">
+            <p class="text-amber-500 text-xl">★★★★★</p>
+            <p class="my-4 italic text-slate-600">
+              Outstanding service and great communication.
+            </p>
+            <div class="flex items-center gap-4">
+              <img src="images/user3.jpg" class="w-14 h-14 rounded-full" />
+              <div>
+                <h4 class="font-bold">Client 3</h4>
+                <span class="text-sm text-slate-500">CEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div
+        class="max-w-5xl mx-auto px-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl text-white p-12 text-center"
+      >
+        <h2 class="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="mb-8">Let's build something amazing together.</p>
+        <a
+          class="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold"
+          >Get Started Today</a
+        >
+      </div>
+    </section>
+
+    <section id="contact" class="py-20">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+          <p class="text-slate-600">
+            Email: hello@example.com<br />Phone: +62 812 3456 7890<br />Jakarta,
+            Indonesia
+          </p>
+        </div>
+        <form class="bg-white rounded-2xl shadow-lg p-8 space-y-5">
+          <input
+            class="w-full border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            placeholder="Full Name"
+          />
+          <input
+            class="w-full border rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            placeholder="Email"
+          />
+          <textarea
+            class="w-full border rounded-xl p-4 h-40 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            placeholder="Message"
+          ></textarea>
+          <button
+            class="w-full bg-blue-600 text-white rounded-xl py-4 hover:bg-blue-700"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-12">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10"
+      >
+        <div>
+          <h3 class="text-2xl text-white font-bold mb-4">DigitalAgency</h3>
+          <p>Building modern digital products for startups and enterprises.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li>About</li>
+            <li>Careers</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li>Web</li>
+            <li>Mobile</li>
+            <li>UI/UX</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li>Contact</li>
+            <li>FAQ</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center mt-12 text-slate-500">
+        © 2026 DigitalAgency. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
