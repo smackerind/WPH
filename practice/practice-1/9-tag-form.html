@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 9 - Tag Form</title>
+  </head>
+  <body>
+    <h1>Materi 9 - Tag Form</h1>
+
+    <!-- 1. Form Simple -->
+    <h2>1. Form Simple</h2>
+    <form>
+      <div class="username">
+        <label for="username">Username : </label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Ketikkan username"
+          required
+        />
+      </div>
+      <div class="email">
+        <label for="email">Email : </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Ketikkan email"
+          required
+        />
+      </div>
+      <div class="password">
+        <label for="password">Email : </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Ketikkan password"
+          required
+        />
+      </div>
+      <div class="tanggal-lahir">
+        <label for="tanggal-lahir">Tanggal Lahir :</label>
+        <input type="date" />
+      </div>
+      <div class="gender">
+        <label for="gender"
+          >Pilih Gender :
+          <input type="radio" name="gender" value="l" />Laki-laki
+          <input type="radio" name="gender" value="p" />Perempuan
+        </label>
+      </div>
+      <div class="hobby">
+        <label for=""
+          >Pilih Hobby :
+
+          <input type="checkbox" name="hobby" value="basket" />Basket
+          <input type="checkbox" name="hobby" value="ngoding" />Ngoding
+          <input type="checkbox" name="hobby" value="main game" />Main Game
+        </label>
+      </div>
+      <div class="religion">
+        <select name="religion">
+          <option value="" disabled selected>---Pilih Agama---</option>
+          <option value="budha">Budha</option>
+          <option value="hindu">Hindu</option>
+          <option value="islam">Islam</option>
+          <option value="kristen">Kristen</option>
+        </select>
+      </div>
+      <div class="address">
+        <textarea
+          maxlength="10"
+          minlength="2"
+          name="address"
+          placeholder="Ketikkan alamat"
+        ></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- 2. Form Advance -->
+    <h2>2. Form Advance</h2>
+    <form>
+      <fieldset>
+        <legend>Form Biodata</legend>
+        <div class="username">
+          <label for="username">Username : </label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Ketikkan username"
+            required
+          />
+        </div>
+        <div class="email">
+          <label for="email">Email : </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Ketikkan email"
+            required
+          />
+        </div>
+        <div class="password">
+          <label for="password">Email : </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Ketikkan password"
+            required
+          />
+        </div>
+        <div class="tanggal-lahir">
+          <label for="tanggal-lahir">Tanggal Lahir :</label>
+          <input type="date" />
+        </div>
+        <div class="gender">
+          <label for="gender"
+            >Pilih Gender :
+            <input type="radio" name="gender" value="l" />Laki-laki
+            <input type="radio" name="gender" value="p" />Perempuan
+          </label>
+        </div>
+        <div class="hobby">
+          <label for=""
+            >Pilih Hobby :
+
+            <input type="checkbox" name="hobby" value="basket" />Basket
+            <input type="checkbox" name="hobby" value="ngoding" />Ngoding
+            <input type="checkbox" name="hobby" value="main game" />Main Game
+          </label>
+        </div>
+        <div class="religion">
+          <select name="religion">
+            <option value="" disabled selected>---Pilih Agama---</option>
+            <option value="budha">Budha</option>
+            <option value="hindu">Hindu</option>
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+          </select>
+        </div>
+        <div class="address">
+          <textarea
+            maxlength="10"
+            minlength="2"
+            name="address"
+            placeholder="Ketikkan alamat"
+          ></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

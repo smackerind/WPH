@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi 6 - Tag Semantic</title>
+  </head>
+  <body>
+    <h1>Materi 6 - Tag Semantic</h1>
+
+    <!-- 1. Non Semantic Structure -->
+    <div class="header">
+      header
+      <div class="nav"></div>
+    </div>
+    <div class="sidebar">sidebar</div>
+    <div class="main">
+      main
+      <div class="section hero"></div>
+      <div class="section about"></div>
+      <div class="section contact"></div>
+    </div>
+    <div class="footer">footer</div>
+
+    <!-- 2. Semantic Structure -->
+    <header>
+      <nav></nav>
+    </header>
+    <aside></aside>
+    <main>
+      <section class="hero">
+        <div
+          class="kotak"
+          style="width: 100%; height: 100dvh; background-color: red"
+        ></div>
+      </section>
+      <section class="about"></section>
+      <section class="contact"></section>
+    </main>
+    <footer></footer>
+
+    <!-- Contoh Semantic HTML -->
+    <header>
+      <h1>Nama Situs</h1>
+      <nav>
+        <a href="#home">Home</a> | <a href="#about">About</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Section Satu</h2>
+        <p>Konten bagian pertama.</p>
+      </section>
+      <section>
+        <h2>Section Dua</h2>
+        <article>
+          <h3>Artikel dalam section</h3>
+          <p>Ini konten artikel.</p>
+        </article>
+      </section>
+    </main>
+    <aside>
+      <p>Sidebar: link atau info tambahan.</p>
+    </aside>
+    <footer>
+      <p>&copy; 2026 Bootcamp. Semua hak dilindungi.</p>
+    </footer>
+  </body>
+</html>
