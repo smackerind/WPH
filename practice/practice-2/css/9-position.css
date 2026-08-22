@@ -1,0 +1,35 @@
+.kotak {
+  width: 100px;
+  height: 100px;
+}
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+/* 1. STATIC */
+.static {
+  position: static;
+  top: 20px;
+  left: 20px;
+}
+
+/* 2. RELATIVE */
+.relative {
+  position: relative;
+  top: 20px;
+  left: 50px;
+}
+
+/* 3. ABSOLUTE */
+.absolute {
+  position: absolute;
+  left: 40px;
+}

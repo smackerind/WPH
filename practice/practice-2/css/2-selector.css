@@ -1,0 +1,107 @@
+/* 1. Element Selector */
+p {
+  color: red;
+}
+
+/* 2. Class Selector (.) */
+.judul {
+  background-color: blue;
+  color: white;
+}
+
+.halaman {
+  text-shadow: 2px 2px red;
+}
+
+/* 3. ID Selector (#) */
+#teks {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: red;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+span#teks {
+  background-color: yellow;
+}
+
+/* 4. Universal Selector (*) */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+}
+
+h3.judul3#judul3 {
+  color: red;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/* 5. Descendant Selector */
+div p {
+  color: blue;
+}
+
+/* 6. Child Selector (>) */
+ol li {
+  color: blue;
+}
+
+ol > li {
+  color: red;
+}
+
+input[type='password'] {
+  background-color: red;
+}
+
+input[required] {
+  background-color: blue;
+}
+
+a[href] {
+  color: red;
+}
+
+.kotak {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 100px;
+  transition: ease-in-out 0.3s;
+}
+
+.kotak:hover {
+  transform: translateX(100px);
+}
+
+input:focus {
+  outline: 2px solid red;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: '👉🏻 ';
+}
+ul li::after {
+  content: ' ❌';
+}
+
+ul li:nth-child(odd) {
+  color: yellow;
+}
+
+h6,
+h4,
+h5 {
+  background-color: red;
+  color: white;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}

@@ -1,0 +1,10 @@
+/* 3. ESKTERNAL CSS */
+span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+p {
+  color: blue;
+}

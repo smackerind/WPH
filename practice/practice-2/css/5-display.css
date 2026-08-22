@@ -1,0 +1,27 @@
+/* 1. Block */
+p {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+  margin: 100px;
+  padding: 20px;
+}
+
+/* 2. Inline */
+span {
+  background-color: red;
+  width: 1000px;
+  height: 1000px;
+  margin: 100px;
+}
+
+/* 3. Inline-Block */
+a {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 100px;
+  padding: 100px;
+}

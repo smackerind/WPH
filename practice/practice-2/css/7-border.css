@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+}
+
+.kotak {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.japan {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 360px;
+}
