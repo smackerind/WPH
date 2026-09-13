@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Build output
+dist/
+dist-ssr/
+build/
+*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+.vite/
+node_modules/.vite/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Caches
+.cache/
+.eslintcache
+.oxlintcache
+.parcel-cache/
+.temp/
+.tmp/
+
+# Editors & IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing / coverage
+coverage/
+*.lcov
