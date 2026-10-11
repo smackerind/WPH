@@ -1,0 +1,19 @@
+# Dependency
+node_modules/
+
+# Hasil kompilasi TypeScript
+dist/
+*.tsbuildinfo
+
+.env
+.env.*
+
+# Log
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

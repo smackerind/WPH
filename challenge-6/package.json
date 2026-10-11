@@ -1,0 +1,24 @@
+{
+  "name": "assignment-6-book-management",
+  "version": "1.0.0",
+  "description": "Simple Book Management Application - Week 6",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "npm run build && npm start",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "typescript",
+    "bootcamp",
+    "assignment"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.4.0"
+  }
+}
