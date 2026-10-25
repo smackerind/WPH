@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/**
+ * Design token Sociality.
+ *
+ * Seluruh nilai di bawah disalin dari file Foundations (Typography, Colors,
+ * Radius, Spacing). Komponen tidak boleh memakai angka atau warna lepas —
+ * selalu lewat token di sini supaya satu perubahan berlaku ke semua layar.
+ */
+@theme {
+  /* --- Font -------------------------------------------------------------
+     Desain memakai SF Pro (milik Apple, tidak boleh dibundel sebagai web
+     font). Inter dipilih sebagai penggantinya: bentuk dan metriknya paling
+     dekat, bebas lisensi, dan hasilnya sama di semua perangkat.          */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+
+  /* --- Netral ----------------------------------------------------------- */
+  --color-neutral-25: #fdfdfd;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e9eaeb;
+  --color-neutral-300: #d5d7da;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-500: #717680;
+  --color-neutral-600: #535862;
+  --color-neutral-700: #414651;
+  --color-neutral-800: #252b37;
+  --color-neutral-900: #181d27;
+  --color-neutral-950: #0a0d12;
+
+  /* --- Primary (ungu) — tombol dan tautan aktif -------------------------- */
+  --color-primary-100: #f6f9fe;
+  --color-primary-200: #7f51f9;
+  --color-primary-300: #6936f2;
+
+  /* --- Aksen ------------------------------------------------------------- */
+  --color-accent-red: #d9206e;
+  --color-accent-green: #079455;
+  --color-accent-yellow: #fdb022;
+
+  /* Merah hati pada tombol like, dipakai di beberapa frame */
+  --color-like: #b41759;
+
+  /* --- Lapisan kaca ------------------------------------------------------
+     Kartu dan menu melayang di desain memakai latar hitam transparan
+     ditambah blur, bukan warna solid.                                    */
+  --color-glass: #00000033;
+
+  /* --- Skala huruf (ukuran / tinggi baris) ------------------------------- */
+  --text-xs: 0.75rem; /* 12 / 24 */
+  --text-xs--line-height: 1.5rem;
+  --text-sm: 0.875rem; /* 14 / 28 */
+  --text-sm--line-height: 1.75rem;
+  --text-md: 1rem; /* 16 / 30 */
+  --text-md--line-height: 1.875rem;
+  --text-lg: 1.125rem; /* 18 / 32 */
+  --text-lg--line-height: 2rem;
+  --text-xl: 1.25rem; /* 20 / 34 */
+  --text-xl--line-height: 2.125rem;
+
+  --text-display-xs: 1.5rem; /* 24 / 36 */
+  --text-display-xs--line-height: 2.25rem;
+  --text-display-sm: 1.75rem; /* 28 / 38 */
+  --text-display-sm--line-height: 2.375rem;
+  --text-display-md: 2rem; /* 32 / 40 */
+  --text-display-md--line-height: 2.5rem;
+  --text-display-lg: 2.25rem; /* 36 / 44, -2% */
+  --text-display-lg--line-height: 2.75rem;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-xl: 2.5rem; /* 40 / 48, -2% */
+  --text-display-xl--line-height: 3rem;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-2xl: 3rem; /* 48 / 60, -2% */
+  --text-display-2xl--line-height: 3.75rem;
+  --text-display-2xl--letter-spacing: -0.02em;
+  --text-display-3xl: 3.75rem; /* 60 / 72 */
+  --text-display-3xl--line-height: 4.5rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Aplikasi ini bertema gelap sepenuhnya — tidak ada mode terang */
+  body {
+    background-color: var(--color-neutral-950);
+    color: var(--color-neutral-25);
+    font-family: var(--font-sans);
+  }
+
+  /* Hilangkan tombol panah bawaan pada input number */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+/**
+ * Animasi munculnya modal.
+ *
+ * Ditulis sendiri, hanya dua keyframe yang benar-benar dipakai — lebih
+ * ringan daripada memasang paket animasi utuh, dan tidak bergantung pada
+ * resolusi paket CSS yang belum stabil di Turbopack.
+ */
+@keyframes sociality-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sociality-zoom-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@utility animate-overlay-in {
+  animation: sociality-fade-in 150ms ease-out;
+}
+
+@utility animate-dialog-in {
+  animation: sociality-zoom-in 150ms ease-out;
+}
+
+/**
+ * Kolom tengah aplikasi.
+ * Desain desktop maupun mobile sama-sama memakai satu kolom sempit
+ * (timeline Instagram), bukan layout lebar.
+ */
+@utility container-feed {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 600px;
+  padding-inline: 0;
+}
+
+/** Permukaan kaca: dipakai navbar, bottom nav, kartu login, dan modal */
+@utility surface-glass {
+  background-color: var(--color-glass);
+  backdrop-filter: blur(40px);
+  border: 1px solid var(--color-neutral-900);
+}
+
+/** Sembunyikan scrollbar pada baris yang digeser ke samping */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/**
+ * Latar gradien ungu di bawah layar Login & Register.
+ * Di desain berupa cahaya ungu besar yang memudar ke hitam.
+ */
+@utility auth-glow {
+  background:
+    radial-gradient(
+      95% 55% at 50% 108%,
+      var(--color-primary-200) 0%,
+      color-mix(in srgb, var(--color-primary-300) 70%, transparent) 40%,
+      transparent 78%
+    ),
+    var(--color-neutral-950);
+}
