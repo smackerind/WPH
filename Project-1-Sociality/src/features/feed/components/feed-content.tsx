@@ -30,7 +30,10 @@ export const FeedContent = () => {
   const active = feedIsEmpty ? explore : feed;
   const posts = feedIsEmpty ? explorePosts : feedPosts;
 
-  if (feed.isLoading) {
+  // isPending, bukan isLoading: sebelum cookie login selesai dibaca query
+  // belum jalan (isLoading masih false), dan tanpa ini tampilan kosong
+  // sempat berkedip sebelum feed dimuat
+  if (feed.isPending) {
     return <FeedSkeleton count={2} />;
   }
 
@@ -40,8 +43,18 @@ export const FeedContent = () => {
     );
   }
 
-  if (feedIsEmpty && explore.isLoading) {
+  if (feedIsEmpty && explore.isPending) {
     return <FeedSkeleton count={2} />;
+  }
+
+  // Explore gagal jangan sampai terbaca sebagai "timeline kosong"
+  if (feedIsEmpty && explore.isError) {
+    return (
+      <ErrorState
+        message={explore.error.message}
+        onRetry={() => explore.refetch()}
+      />
+    );
   }
 
   if (posts.length === 0) {
