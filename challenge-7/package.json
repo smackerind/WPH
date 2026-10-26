@@ -1,0 +1,22 @@
+{
+  "name": "todo-app-typescript",
+  "version": "1.0.0",
+  "description": "Command-line To-Do List application using TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm start"
+  },
+  "keywords": [
+    "typescript",
+    "todo",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.0.0"
+  }
+}
