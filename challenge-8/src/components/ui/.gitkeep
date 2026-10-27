@@ -1,0 +1,9 @@
+# This file ensures the directory is tracked by git
+# Delete this file once you add your components here
+
+# Expected files in this folder:
+# - Button.tsx (there's a Button.example.tsx as reference)
+# - Card.tsx
+# - Input.tsx (if needed for forms)
+# - Icon.tsx (optional)
+# - etc. reusable UI components

@@ -1,0 +1,173 @@
+/**
+ * Main CSS File
+ *
+ * Tailwind CSS v4 - Using new @import syntax
+ * Docs: https://tailwindcss.com/docs/installation/using-vite
+ */
+
+@import "tailwindcss";
+
+/* Tell Tailwind where to scan for classes */
+@source "./**/*.{js,jsx,ts,tsx}";
+@source "../index.html";
+
+@theme {
+  /* ---------- Font family ---------- */
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Colors (Figma variables) ---------- */
+  --color-primary-200: #ff623e;
+  --color-primary-300: #cc4e32;
+
+  --color-neutral-25: #fdfdfd;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f6;
+  --color-neutral-200: #e9eaeb;
+  --color-neutral-300: #d5d7da;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-500: #717680;
+  --color-neutral-600: #535862;
+  --color-neutral-700: #414651;
+  --color-neutral-800: #252b37;
+  --color-neutral-900: #181d27;
+  --color-neutral-950: #0a0d12;
+
+  /* ---------- Text styles: size / line-height ---------- */
+  --text-xs: 12px;
+  --text-xs--line-height: 24px;
+  --text-sm: 14px;
+  --text-sm--line-height: 28px;
+  --text-md: 16px;
+  --text-md--line-height: 30px;
+  --text-lg: 18px;
+  --text-lg--line-height: 32px;
+  --text-xl: 20px;
+  --text-xl--line-height: 34px;
+
+  /* ---------- Display styles: size / line-height ---------- */
+  --text-display-xs: 24px;
+  --text-display-xs--line-height: 36px;
+  --text-display-sm: 28px;
+  --text-display-sm--line-height: 38px;
+  --text-display-md: 32px;
+  --text-display-md--line-height: 42px;
+  --text-display-lg: 36px;
+  --text-display-lg--line-height: 44px;
+  --text-display-xl: 40px;
+  --text-display-xl--line-height: 56px;
+  --text-display-2xl: 48px;
+  --text-display-2xl--line-height: 60px;
+  --text-display-3xl: 56px;
+  --text-display-3xl--line-height: 68px;
+
+  /* ---------- Effects ---------- */
+  --shadow-button: inset 4px 4px 4px 0 #ffffff40;
+
+  /* ---------- Animations ---------- */
+  --animate-fade-in: fade-in 200ms ease-out;
+  --animate-pop-in: pop-in 250ms ease-out;
+  --animate-slide-down: slide-down 250ms ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Lebar konten mengikuti Figma: 1160px di desktop, padding 16px di mobile */
+@utility container-page {
+  width: 100%;
+  max-width: calc(1160px + 2rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@layer base {
+  html {
+    /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    /* Light mode = default (ikut prefers-color-scheme browser), dark mode = tampilan awal */
+    @apply bg-white font-sans text-neutral-950 antialiased dark:bg-black dark:text-neutral-25;
+  }
+
+  /* Section anchor tidak tertutup navbar yang fixed */
+  section[id] {
+    @apply scroll-mt-16 lg:scroll-mt-[84px];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/**
+ * Custom Global Styles
+ *
+ * Add your custom global styles here if needed
+ * Prefer using Tailwind utilities in components
+ */
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Custom scrollbar styles */
+/* Uncomment if you want custom scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*/

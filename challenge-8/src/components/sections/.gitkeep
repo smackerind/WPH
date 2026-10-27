@@ -1,0 +1,11 @@
+# This file ensures the directory is tracked by git
+# Delete this file once you add your components here
+
+# Expected files in this folder:
+# - HeroSection.tsx
+# - AboutSection.tsx
+# - ServicesSection.tsx
+# - TestimonialsSection.tsx (if applicable)
+# - TeamSection.tsx (if applicable)
+# - ContactSection.tsx
+# - etc. based on your Figma design

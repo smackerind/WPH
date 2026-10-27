@@ -1,0 +1,7 @@
+# This file ensures the directory is tracked by git
+# Delete this file once you add your components here
+
+# Expected files in this folder:
+# - Navbar.tsx
+# - Footer.tsx
+# - Layout.tsx (optional)
