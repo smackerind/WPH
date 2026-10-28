@@ -223,34 +223,6 @@ Good luck dan have fun coding! 🚀
 
 ---
 
-**Remember**: Yang terpenting bukan hanya aplikasi yang jadi, tapi proses learning dan pemahaman kalian terhadap tech stack yang digunakan!
-
-## Mentor Henry Rivardo
-
-Halo semuanya!
-
-Saya Henry Rivardo, dan saya sangat excited melihat kalian mengerjakan Challenge 9 ini. Assignment ini memang challenging, tapi saya percaya kalian semua mampu menyelesaikannya dengan baik.
-
-Beberapa hal yang ingin saya sampaikan:
-
-**Jangan takut untuk mencoba dan gagal.** Setiap error yang kalian temui adalah kesempatan untuk belajar. Debugging adalah skill penting yang akan kalian gunakan sepanjang karir sebagai developer. Embrace the process!
-
-**Manfaatkan resources yang ada.** Dokumentasi, tutorial, dan tentunya mentor kalian selalu siap membantu. Jangan ragu untuk bertanya jika ada yang tidak clear. No question is too small or silly - we're all here to learn together.
-
-**Fokus pada pemahaman, bukan sekadar menyelesaikan.** Tech stack yang kalian pelajari di sini (React Query, Zustand, TypeScript) adalah tools yang sangat powerful dan banyak digunakan di industri. Investasi waktu kalian untuk memahami konsep-konsep ini akan sangat bermanfaat untuk karir kalian kedepannya.
-
-**Enjoy the journey!** Coding itu fun. Jika kalian stuck atau frustasi, take a break, walk around, dan come back dengan fresh mind. Sometimes the best solutions come when we're not actively thinking about the problem.
-
-Saya bangga dengan dedikasi dan effort yang kalian semua tunjukkan. Keep pushing, keep learning, dan yang terpenting - have fun building this awesome movie app!
-
-If you need anything, I'm just a message away. Let's make this the best learning experience possible!
-
-Semangat dan success untuk kalian semua!
-
-**- Henry Rivardo**
-
----
-
 ## Catatan Implementasi
 
 Bagian ini ditambahkan setelah aplikasi selesai dikerjakan.
