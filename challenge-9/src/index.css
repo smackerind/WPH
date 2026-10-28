@@ -1,0 +1,116 @@
+/**
+ * Global styles & design tokens
+ *
+ * Token warna, font, dan ukuran teks diambil dari Figma (Foundations).
+ * Dengan Tailwind v4 semua token ditulis di @theme, jadi bisa langsung
+ * dipakai sebagai utility class: bg-primary-300, text-neutral-400,
+ * text-display-xs, dst.
+ */
+
+@import "tailwindcss";
+
+@source "./**/*.{ts,tsx}";
+@source "../index.html";
+
+@theme {
+  /* ---------- Font family ---------- */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Colors ---------- */
+  --color-primary-100: #f4b7ae;
+  --color-primary-200: #c0281a;
+  --color-primary-300: #961200;
+  --color-primary-400: #6d0d00;
+
+  --color-neutral-25: #fdfdfd;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-500: #717680;
+  --color-neutral-600: #535862;
+  --color-neutral-800: #252b37;
+  --color-neutral-900: #181d27;
+  --color-neutral-950: #0a0d12;
+
+  /* Panel semi transparan (#0A0D12 60%) dipakai di tombol & search box */
+  --color-surface-glass: rgb(10 13 18 / 0.6);
+
+  /* ---------- Text scale: size / line-height ---------- */
+  --text-xs: 12px;
+  --text-xs--line-height: 24px;
+  --text-sm: 14px;
+  --text-sm--line-height: 28px;
+  --text-md: 16px;
+  --text-md--line-height: 30px;
+  --text-lg: 18px;
+  --text-lg--line-height: 32px;
+  --text-xl: 20px;
+  --text-xl--line-height: 34px;
+
+  /* ---------- Display scale ---------- */
+  --text-display-xs: 24px;
+  --text-display-xs--line-height: 36px;
+  --text-display-sm: 28px;
+  --text-display-sm--line-height: 38px;
+  --text-display-md: 32px;
+  --text-display-md--line-height: 42px;
+  --text-display-lg: 36px;
+  --text-display-lg--line-height: 44px;
+  --text-display-xl: 40px;
+  --text-display-xl--line-height: 56px;
+  --text-display-2xl: 48px;
+  --text-display-2xl--line-height: 60px;
+  --text-display-3xl: 56px;
+  --text-display-3xl--line-height: 68px;
+
+  /* ---------- Animations ---------- */
+  --animate-fade-in: fade-in 200ms ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Lebar konten: 361px + padding 16px di mobile, maksimal 1200px di desktop */
+@utility container-page {
+  width: 100%;
+  max-width: calc(1200px + 2rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black font-sans text-neutral-25 antialiased;
+  }
+
+  /* Sembunyikan scrollbar pada baris yang bisa digeser horizontal */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
