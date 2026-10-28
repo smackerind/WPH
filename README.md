@@ -18,6 +18,6 @@ VS Code · Git · GitHub · Linux · Docker · Vercel
 - Shipping small projects:
   - social media app ([Sociality](https://sociality-wph2.vercel.app))
   - example of company profile ([companyprofile](https://companyprofile-peach.vercel.app))
-  - Movie Explorer app - coming soon
+  - Movie Explorer app ([Movie Explorer App](https://movieapp-sand-alpha.vercel.app))
   - Restaurant app - coming soon
 - Others project will be soon posted
