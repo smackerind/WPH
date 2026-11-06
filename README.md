@@ -16,7 +16,7 @@ VS Code · Git · GitHub · Linux · Docker · Vercel
 ## 🌱 Right now
 - Learning through a Front End Web Programming bootcamp
 - Shipping small projects:
-  - social media app ([Sociality](https://sociality-wph2.vercel.app))
+  - social media app ([Sociality](https://sociality-omega.vercel.app))
   - example of company profile ([companyprofile](https://companyprofile-peach.vercel.app))
   - Movie Explorer app ([Movie Explorer App](https://movieapp-sand-alpha.vercel.app))
   - Restaurant app - coming soon
