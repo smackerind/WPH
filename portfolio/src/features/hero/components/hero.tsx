@@ -155,21 +155,10 @@ export const Hero = () => {
     heroContent;
 
   return (
-    /* UBAH: tinggi desktop mengikuti min-h-screen → 874px tetap, ditutup
-       garis neutral-800 (desain: Sidebar border-top di y=874) */
-    <section
-      id="home"
-      className="relative overflow-hidden lg:h-[874px] lg:border-b lg:border-neutral-800"
-    >
-      {/* UBAH: tambah dua garis vertikal Line9 (x=375) & Line8 (x=707) */}
-      <span
-        aria-hidden
-        className="absolute top-0 left-[26.04%] hidden h-full w-px bg-neutral-800 lg:block"
-      />
-      <span
-        aria-hidden
-        className="absolute top-0 left-[49.1%] hidden h-full w-px bg-neutral-800 lg:block"
-      />
+    /* UBAH: tinggi desktop mengikuti min-h-screen → 874px tetap.
+       Garis bawah (Sidebar border-top) dan dua garis vertikal Line9/Line8
+       dihapus atas permintaan pemilik (Nov 2026). */
+    <section id="home" className="relative overflow-hidden lg:h-[874px]">
 
       {/* UBAH: motif kotak 2×32px → 3×46px tangga, menempel di kiri bawah (Group1 top 782) */}
       <span

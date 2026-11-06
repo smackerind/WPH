@@ -32,11 +32,9 @@ export const Navbar = () => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        /* UBAH: garis bawah neutral-800 kini selalu tampil (desain Header
-           punya border-bottom). Di puncak halaman latarnya tetap transparan
-           supaya foto Hero yang naik ke belakang navbar terlihat. */
+        /* UBAH: Di puncak halaman latarnya transparan supaya foto Hero yang naik ke belakang navbar terlihat. */
         className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b border-neutral-800 transition-colors duration-300",
+          "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
           scrolled ? "bg-base-black/90 backdrop-blur-md" : "bg-transparent",
         )}
       >
