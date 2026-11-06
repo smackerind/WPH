@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* Font Red Hat Display diambil dari paket @fontsource supaya ikut terbundel
+   dan tidak perlu mengunduh dari internet saat build. */
+@import "@fontsource/red-hat-display/400.css";
+@import "@fontsource/red-hat-display/500.css";
+@import "@fontsource/red-hat-display/600.css";
+@import "@fontsource/red-hat-display/700.css";
+@import "@fontsource/red-hat-display/800.css";
+
+/**
+ * Design token portofolio.
+ * Semua nilai diambil dari file Foundation.png dan layer Figma.
+ * Komponen tidak boleh memakai angka/warna acak — selalu lewat token di sini.
+ */
+@theme {
+  /* --- Font ----------------------------------------------------------- */
+  --font-sans: "Red Hat Display", ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Warna ----------------------------------------------------------- */
+  /* Hijau lime adalah warna aksi utama di seluruh halaman */
+  --color-primary-100: #daffab;
+  --color-primary-200: #91ff02;
+  --color-primary-300: #3a6601;
+  --color-primary-400: #1d3300;
+
+  --color-neutral-25: #fdfdfd;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-800: #252b37;
+  --color-neutral-950: #0a0d12;
+
+  --color-base-black: #000000;
+  --color-base-white: #ffffff;
+
+  /* Dipakai untuk bintang rating dan pesan gagal */
+  --color-accent-star: #f79009;
+  --color-accent-error: #e34c3d;
+
+  /* --- Skala huruf (ukuran / tinggi baris) ------------------------------ */
+  --text-xs: 0.75rem; /* 12px */
+  --text-xs--line-height: 1.5rem; /* 24px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.75rem; /* 28px */
+  --text-md: 1rem; /* 16px */
+  --text-md--line-height: 1.875rem; /* 30px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-lg--line-height: 2rem; /* 32px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-xl--line-height: 2.125rem; /* 34px */
+
+  --text-display-xs: 1.5rem; /* 24px */
+  --text-display-xs--line-height: 2.25rem; /* 36px */
+  --text-display-sm: 1.75rem; /* 28px */
+  --text-display-sm--line-height: 2.375rem; /* 38px */
+  --text-display-md: 2rem; /* 32px */
+  --text-display-md--line-height: 2.875rem; /* 46px */
+  --text-display-lg: 2.25rem; /* 36px */
+  --text-display-lg--line-height: 3rem; /* 48px */
+  /* UBAH: tambah letter-spacing -2% (Foundation: Display lg/xl/2xl) */
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-xl: 2.5rem; /* 40px */
+  --text-display-xl--line-height: 3.5rem; /* 56px */
+  /* UBAH: tambah letter-spacing -2% (Foundation) */
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-2xl: 3rem; /* 48px */
+  --text-display-2xl--line-height: 3.75rem; /* 60px */
+  /* UBAH: tambah letter-spacing -2% (Foundation) */
+  --text-display-2xl--letter-spacing: -0.02em;
+  --text-display-3xl: 3.75rem; /* 60px */
+  --text-display-3xl--line-height: 4.5rem; /* 72px */
+  /* Judul hero desktop memakai ukuran khusus 80px di luar skala */
+  --text-hero: 5rem; /* 80px */
+  /* UBAH: 88px → 80px (desain HeroTitle: line-height 100%) */
+  --text-hero--line-height: 5rem; /* 80px */
+
+  /* --- Sudut (Foundation → Radius) --------------------------------------- */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+  --radius-3xl: 1.25rem; /* 20px */
+  /* UBAH: tambah radius-4xl 24px dari Foundation */
+  --radius-4xl: 1.5rem; /* 24px */
+
+  /* --- Bayangan --------------------------------------------------------- */
+  /* Cahaya hijau di bawah tombol utama, ciri khas desain ini */
+  /* UBAH: 0 0 24px rgb(.. / .45) → 0 4px 40px #91FF0266 (desain Button) */
+  --shadow-glow: 0 4px 40px 0 #91ff0266;
+  --shadow-glow-lg: 0 4px 48px 0 rgb(145 255 2 / 0.6);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Navbar menempel di atas, jadi anchor diberi jarak agar judul tidak tertutup */
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+    /* Animasi "masuk dari samping" menggeser elemen keluar layar sebelum
+       dijalankan, yang memunculkan scroll horizontal. `clip` memotongnya
+       tanpa mematikan position: sticky seperti yang dilakukan `hidden`. */
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--color-base-black);
+    color: var(--color-neutral-25);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Matikan animasi untuk pengguna yang memintanya lewat setelan sistem */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/**
+ * Pembungkus lebar halaman.
+ * Desain desktop: konten 1184px di tengah layar 1440px.
+ * Desain mobile: konten 361px di layar 393px (sisi 16px).
+ */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1216px;
+  /* UBAH: 24px di mobile → 16px di semua ukuran (desain mobile padding 16px) */
+  padding-inline: 1rem;
+}
+
+/** Baris yang digeser ke samping tanpa batang scroll */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/**
+ * Motif kotak hijau gelap (layer "Group1" di Figma) yang muncul di pojok
+ * beberapa bagian. Dibuat dengan gradient supaya tidak perlu file gambar.
+ *
+ * UBAH: 2 kotak 32px diagonal → 3 kotak 46px berbentuk tangga
+ * (138×92): satu di tengah atas, dua di kiri & kanan bawah. Di mobile
+ * kotaknya 34,5px (103,5×69). Arah lain didapat dengan `rotate-*`.
+ */
+@utility deco-squares {
+  --deco: 34.5px;
+  width: calc(var(--deco) * 3);
+  height: calc(var(--deco) * 2);
+  background-image:
+    linear-gradient(var(--color-primary-400) 0 0),
+    linear-gradient(var(--color-primary-400) 0 0),
+    linear-gradient(var(--color-primary-400) 0 0);
+  background-repeat: no-repeat;
+  background-size: var(--deco) var(--deco);
+  background-position:
+    0 100%,
+    50% 0,
+    100% 100%;
+
+  @variant lg {
+    --deco: 46px;
+  }
+}
